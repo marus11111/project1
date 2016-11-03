@@ -1,0 +1,52 @@
+nav {
+    position:absolute;
+    top: 9.7%;
+    left: 46.8%;
+    width: 43.4%;
+    height: 5.5%;
+    transition: left 1s, width 1s, height 1s, background-color 1s, border-color 1s;
+    ul{
+        border: {
+            color: rgba(175, 176, 170, 0.5);
+            radius: 11px;
+            style: solid;
+            width: 2px;  
+        }
+        height:1.9em;
+        background-color: rgba(140, 140, 140, 0.6);
+    }
+    li {
+        display: inline-block;
+        position: relative;
+        top:-2px;
+        padding: 0.3em 1em;
+        font:400 22px Roboto;
+        cursor: pointer;
+        color: #000000;
+        border: {
+            radius: 10px;
+            style: solid;
+            width: 1px;
+            color:rgba(140, 140, 140, 0);
+        }
+    }
+    li:hover{
+        border-color: #afb0aa;
+        background-color: rgba(140, 140, 140, 0.9);
+    }
+    #home{
+        margin:0;
+    }
+    &.menu-fixed-state {
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: fixed;
+        ul {
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px solid rgba(175, 176, 170, 0.5);
+        }
+    }
+}
+
