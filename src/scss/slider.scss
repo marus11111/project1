@@ -1,77 +1,61 @@
-#header-slider {
+.slider {
     position: absolute;
     width:100%;
     height:100%;
-}
-
-.slide {
-    position: absolute;
-    top:0;
-    left:100%;
-    width: 100%;
-    height:100%;
-    background: {
-        size:cover;
-        repeat:no-repeat;
-    }
-    &:first-child {
-        left:0;
-    }
-    &::after {
-        content:'';
-        position:absolute;
-        display:block;
+    
+    &__slide {
+        position: absolute;
         top:0;
+        left:100%;
         width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.45); 
+        height:100%;
+        background: {
+            size:cover;
+            repeat:no-repeat;
+        }
+        &:first-child {
+            left:0;
+        }
+        &::after {
+            content:'';
+            position:absolute;
+            display:block;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45); 
+        }
+        
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                background-image:url('pics/slide#{$i}.jpg');
+            }
+        }
     }
-}
-
-
-#slide1 {
-    background-image:url(pics/slide1.jpg);
-}
-
-#slide2{
-    background-image:url(pics/slide2.jpg);
-}
-
-#slide3 {
-    background-image:url(pics/slide3.jpg);
-}
-
-#slide4{
-    background-image:url(pics/slide4.jpg);
-}
-
-#slide5{
-    background-image:url(pics/slide5.jpg);
-}
-
-#slider-circles{
-    display:none;
-    position:relative;
-    top:93%;
-    margin: 0 auto;
-    width: 9em;
-    height: 1em;
-}
-
-.slider-single-circle {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    border:{
-        color: #ff7200;
-        radius: 50%;
-        style: solid;
-        width: 1px;
+    
+    &__circles{
+        display:none;
+        position:absolute;
+        top:93%;
+        width: 100%;
+        height: 1em;
     }
-    margin: 0 0.25em;
-    transition: background-color 1s;
-    cursor: pointer;
-    &:first-child {
-        background-color: rgba(255,114,0,1);
+    
+    &__single-circle {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border:{
+            color: #ff7200;
+            radius: 50%;
+            style: solid;
+            width: 1px;
+        }
+        margin: 0 0.25em;
+        transition: background-color 1s;
+        cursor: pointer;
+        &:first-child {
+            background-color: rgba(255,114,0,1);
+        }
     }
 }

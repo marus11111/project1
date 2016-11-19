@@ -1,13 +1,13 @@
-var nav = require('../helpers/getDOMElements').nav;
+var menu = require('../helpers/getDOMElements').menu;
 var menuTop = 0.097 * window.innerHeight;
 
 function scrollHandler(){
     var scroll = window.scrollY || window.pageYOffset;
-    if(scroll>=menuTop && !nav.hasClass('menu-fixed-state')){
-        nav.addClass('menu-fixed-state'); 
+    if(scroll>=menuTop && !menu.hasClass('menu--fixed')){
+        menu.addClass('menu--fixed'); 
     }
     else if (scroll<menuTop) {
-        nav.removeClass('menu-fixed-state');
+        menu.removeClass('menu--fixed');
     }
 }
 

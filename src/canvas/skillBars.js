@@ -1,5 +1,6 @@
+var canvas = require('../helpers/getDOMElements').canvas;
+
 var pi = Math.PI;
-var canvas = document.getElementById('skill-bars');
 var ctx = canvas.getContext('2d');
 
 function drawSingleBar(x, y, radius, start, currentPercent){

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Potfolio - projekt 1</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!--<link href='style.css' rel='stylesheet'>-->
+    </head>
+    <body>
+        <header class='masthead'>
+            <nav id='hamburger-button' class='hamburger'>
+                <div class='js_sel-hamburger-lines hamburger__line'></div>
+                <div class='js_sel-hamburger-lines hamburger__line'></div>
+                <div class='js_sel-hamburger-lines hamburger__line'></div>
+            </nav>
+            <nav id='menu' class='menu'>
+                <div class='menu__dark-bg' id='menu-dark-bg'></div>
+                <ul>
+                    <li class='menu__item'>Home</li>
+                    <li class='menu__item'>Services</li>
+                    <li class='menu__item'>Design</li>
+                    <li class='menu__item'>About</li>
+                    <li class='menu__item'>FAQ</li>
+                </ul>
+            </nav>
+            <div class='slider'>
+                <ul>
+                    <li class='js_sel-slides slider__slide slider__slide--1'></li>
+                    <li class='js_sel-slides slider__slide slider__slide--2'></li>
+                    <li class='js_sel-slides slider__slide slider__slide--3'></li>
+                    <li class='js_sel-slides slider__slide slider__slide--4'></li>
+                    <li class='js_sel-slides slider__slide slider__slide--5'></li>
+                </ul> 
+                <nav>
+                    <ul id='slider__circles'>
+                        <li class='js_sel-slider-circles slider__single-circle'></li>
+                        <li class='js_sel-slider-circles slider__single-circle'></li>
+                        <li class='js_sel-slider-circles slider__single-circle'></li>
+                        <li class='js_sel-slider-circles slider__single-circle'></li>
+                        <li class='js_sel-slider-circles slider__single-circle'></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class='masthead__top-logo'><span class='masthead__top-logo--interior'>Interior</span> 69</p>
+            <h1 class='masthead__heading'><span class='masthead__heading--welcome'>Welcome to interior</span> 69</h1>
+            <h2 class='masthead__subheading'>Stay smile with our amazing design</h2>
+            <form class='search-box'>
+                <input type='text' placeholder='search here ..........' class='search-box__input'>
+                <button type='submit' class='search-box__button'>
+                    <img src='pics/search.png' alt='search-icon'>
+                </button>
+            </form>
+        </header>
+        <canvas width='864' height='150' class='skill-bars' id='canvas'></canvas>
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+          integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+          crossorigin="anonymous"></script>
+        <script src='script.js'></script>
+    </body>
+</html>
