@@ -3,20 +3,26 @@ var canvas = require('../helpers/getDOMElements').canvas;
 var pi = Math.PI;
 var ctx = canvas.getContext('2d');
 
-function drawSingleCircle(x, y, radius, start, currentPercent){
+function drawSingleCircle(x, y, radius, start, currentPercent, description, descriptionFont, descriptionY){
     var end = 1.5*pi - (2*pi*currentPercent/100);
     
-    ctx.clearRect(x-radius-5, y-radius-5, 2*radius+10, 2*radius+10);
+    ctx.clearRect(x-radius-5, y-radius-5, 3*radius, 3*radius);
     
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, 2*pi);
     ctx.lineWidth = 1;
     ctx.strokeStyle = 'rgb(112,78,57)';
+    ctx.stroke(); 
+    
     ctx.textAlign = 'center';
     ctx.font = 0.37*radius+'px Roboto';
     ctx.fillStyle = 'rgb(255,114,0)';
     ctx.fillText(currentPercent+'%', x+0.05*radius, y+0.11*radius, 2*radius);
-    ctx.stroke(); 
+    
+    ctx.textAlign = 'center';
+    ctx.font = 'bold '+descriptionFont+' Roboto';
+    ctx.fillStyle = 'black';
+    ctx.fillText(description, x, y+descriptionY, 3*radius);
     
     ctx.beginPath();
     ctx.arc(x, y, radius, start, end, true);
@@ -38,11 +44,11 @@ function drawCircles(options){
                 continue;
             }
             else{
-                drawSingleCircle(skill.x, y, options.radius, options.startAngle, percent);
+                drawSingleCircle(skill.x, y, options.radius, options.startAngle, percent, skill.description, options.descriptionFont, options.descriptionY);
             }
         }
         percent++;
-        if (percent>100){
+        if (percent==100){
             clearInterval(interval);
         }
     }, 20);

@@ -8,13 +8,13 @@ function resizeHandler(){
     baseWidth = window.innerWidth;
     if (baseWidth >= 950){
         menu.css({
-            'z-index': 1,
+            'display': 'block',
             'opacity': 1
         });
     }
     else {
         menu.css({
-            'z-index': 0,
+            'display': 'none',
             'opacity': 0
         });
     }

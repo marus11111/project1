@@ -28,6 +28,7 @@ html, body {
     width: 100%;
     height: 100%;
     text-align: center;
+    font-family: Roboto;
     font-size: 3vh;
 }
 body {
@@ -57,14 +58,16 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 
-h2 {
-    margin-top: 2em;
-    margin-bottom: 1.5em;
+.section-heading {
+    margin-top: 3em;
+    margin-bottom: 1em;
     font: {
-        family: Roboto;
         weight: 400;
-        size: 0.9em;
     }
     @media screen and (min-width: 650px) and (min-height: 650px){
         font-size: 30px;

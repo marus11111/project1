@@ -8,7 +8,7 @@ var menuOpen = false;
 
 function openMenu() {
     menuOpen = true;
-    menu.css('z-index', 1);
+    menu.css('display', 'block');
     menu.fadeTo(0.5, 1);
     hamburgerLines.eq(0).css('transform', 'rotate(-45deg) scale(1.4142) translate(9%, -50%)');
     hamburgerLines.eq(1).fadeTo(0.5, 0);
@@ -19,7 +19,7 @@ function closeMenu() {
     menuOpen = false;
     menu.fadeTo(0.5, 0);
     setTimeout(function () {
-        menu.css('z-index', 0);
+        menu.css('display', 'none');
     }, 500);
     hamburgerLines.eq(0).css('transform', 'none');
     hamburgerLines.eq(1).fadeTo(0.5, 1);

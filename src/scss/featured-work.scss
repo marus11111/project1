@@ -1,7 +1,60 @@
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 1em;
+    width:80%;
+    height: auto;
+}
+
 .video {
+    width: 100%;
+    height: auto;
     &__button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4em;
+        height: 2em;
+        border-radius: 0.4em;
+        background-color: rgb(255, 114, 0);
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(255, 150, 0);
+        }
         &__arrow {
-            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-left: 0.69282em solid rgb(140, 80, 31);
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+        }
+    }
+}
+
+.featured-work-snippet {
+    width: 80%;
+    &__title {
+        @media screen and (min-width: 650px) and (min-height: 650px){
+            font-size: 18px;
+        }
+    }
+    &__body {
+        font: {
+            family: 'Roboto Condensed';
+            size: 0.9em;
+            @media screen and (min-width: 650px) and (min-height: 650px){
+                font-size: 15px;
+            }
+        }
+        text-align: left;
+        &--small {
+            font-size: 0.8em;
+            @media screen and (min-width: 650px) and (min-height: 650px){
+                font-size: 13px;
+            }
         }
     }
 }
