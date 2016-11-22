@@ -2,12 +2,12 @@ require('./scss/entry.scss');
 require('./eventHandlers/scrollHandler');
 require('./eventHandlers/resizeHandler');
 require('./navigation/hamburgerMenu');
-var drawSkillBars = require('./canvas/skillBars').drawSkillBars;
-var SkillBarsOptions = require('./canvas/skillBarsOptions').SkillBarsOptions;
+var drawCircles = require('./canvas/circles').drawCircles;
+var CanvasOptions = require('./canvas/CanvasOptions').CanvasOptions;
 var baseWidth = require('./eventHandlers/resizeHandler').baseWidth;
 var slider = require('./slider/slider');
 
 slider(5000);
 
-var initialOptions = new SkillBarsOptions(baseWidth);
-drawSkillBars(initialOptions);
+var initialOptions = new CanvasOptions(baseWidth);
+drawCircles(initialOptions);
