@@ -20,22 +20,20 @@ var CanvasOptions = function CanvasOptions(bodyWidth){
     }
     if (bodyWidth > 650){
         this.width = 0.7*bodyWidth;
-        this.height = 0.25*this.width;
+        this.height = 0.28*this.width;
         this.radius = 0.3*this.height;
-        this.y = this.height/2.5;
-        this.descriptionFont = '0.9em';
+        this.y = this.height/2.6;
         this.descriptionY = 1.8*this.radius;
-        this.skill1.x = 0.088*this.width;
-        this.skill2.x = 0.3627*this.width;
-        this.skill3.x = 0.6374*this.width;
-        this.skill4.x = 0.912*this.width;
+        this.skill1.x = 0.1*this.width;
+        this.skill2.x = 0.3666*this.width;
+        this.skill3.x = 0.6334*this.width;
+        this.skill4.x = 0.9*this.width;
     }
     else {
         this.width = 0.8*bodyWidth;
         this.height = this.width;
         this.radius = 0.15*this.height;
         this.y = this.height/4;
-        this.descriptionFont = '0.7em';
         this.descriptionY = 1.6*this.radius;
         this.skill1.x = 0.25*this.width;
         this.skill2.x = 0.75*this.width;

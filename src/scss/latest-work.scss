@@ -1,0 +1,59 @@
+.latest-work { 
+    background: {
+        image: url(pics/MergedLayers.jpg);
+        size: cover;
+        position: center;
+    }
+    color: white;
+    margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+.section-heading--latest {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.images-row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-image {
+    position: relative;
+    width: 80%;
+    @media screen and (min-width: 950px) {
+        width: 25%;
+    }
+    max-width: 500px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    display: inline-block;
+    margin: 1em;
+    &__hover {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity 1s;
+        &:hover{
+            opacity: 1;
+        }
+        p {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1em;
+            @media screen and (min-width: 650px) and (min-height: 650px){
+                font-size: 12px;
+            }
+        }
+    }
+}

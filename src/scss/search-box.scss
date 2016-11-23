@@ -23,16 +23,11 @@
         color: rgba(0, 0, 0, 0.6);
         font: {
             weight: 700;
-            size: 1em; //18
+            size: 1em; 
         }
-        text-transform:uppercase;
         text-align: center;
-        &::placeholder{
-            opacity: 1; //for firefox placeholder
+        &::placeholder {
             color: rgba(0, 0, 0, 0.6);
-        }
-        &:focus::placeholder{
-            color:transparent;
         }
     }
     

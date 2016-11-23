@@ -1,0 +1,18 @@
+.engineer {
+    text-align: left;
+    width: 80%;
+    max-width: 430px;
+    display: inline-block;
+    margin: 0.5em 3em;
+    &__image {
+        float: left;
+        margin: 1em;
+    }
+    &__name {
+        margin-top: 1.7em;
+    }
+    &__text {
+        font-size: 0.6em; 
+        margin-top: 0.5em;
+    }
+}

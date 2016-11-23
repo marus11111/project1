@@ -15,7 +15,7 @@
         left: 9.6%;
         top: 9.3%;
         font: {
-            family: Dosis;
+            family: 'Dosis', sans-serif;
             weight: 700;
             size: 1.2em; 
         }
@@ -50,5 +50,8 @@
         position: absolute;
         width: 100%;
         top: 44.1%;
+        @media screen and (min-width: 650px) and (min-height: 650px){
+            font-size: 30px;
+        }
     }
 }
