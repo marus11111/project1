@@ -2,11 +2,13 @@
 <html lang='zxx'>
     <head>
         <title>Potfolio - projekt 1</title>
-        <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed|Roboto:100,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dosis%7CRoboto+Condensed%7CRoboto:100,400,700" rel="stylesheet">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <!--<link href='style.css' rel='stylesheet'>-->
     </head>
     <body>
+        <div class='pop-up__dark-bg' id='dark-bg'>
+        <button class='pop-up__close' id='close'></button></div>
         <header class='masthead'>
             <nav id='hamburger-button' class='hamburger'>
                 <div class='js_sel-hamburger-lines hamburger__line'></div>
@@ -14,7 +16,6 @@
                 <div class='js_sel-hamburger-lines hamburger__line'></div>
             </nav>
             <nav id='menu' class='menu'>
-                <div class='menu__dark-bg' id='menu-dark-bg'></div>
                 <ul>
                     <li class='menu__item'>Home</li>
                     <li class='menu__item'>Services</li>
@@ -32,7 +33,7 @@
                     <li class='js_sel-slides slider__slide slider__slide--5'></li>
                 </ul> 
                 <nav>
-                    <ul id='slider__circles'>
+                    <ul class='slider__circles'>
                         <li class='js_sel-slider-circles slider__single-circle'></li>
                         <li class='js_sel-slider-circles slider__single-circle'></li>
                         <li class='js_sel-slider-circles slider__single-circle'></li>
@@ -62,7 +63,7 @@
                     <source src='video.mp4' type='video/mp4'>
                     <source src='video.ogv' type='video/ogg'>
                 </video>
-                <div class='video__button'>
+                <div class='js_sel-vid-but video__button'>
                     <div class='video__button__arrow'></div>
                 </div>
             </div>
@@ -71,7 +72,7 @@
                     <source src='video2.mp4' type='video/mp4'>
                     <source src='video2.ogv' type='video/ogg'>
                 </video>
-                <div class='video__button'>
+                <div class='js_sel-vid-but video__button'>
                     <div class='video__button__arrow'></div>
                 </div>
             </div>
@@ -80,11 +81,11 @@
                     <source src='video3.mp4' type='video/mp4'>
                     <source src='video3.ogv' type='video/ogg'>
                 </video>
-                <div class='video__button'>
+                <div class='js_sel-vid-but video__button'>
                     <div class='video__button__arrow'></div>
                 </div>
             </div>
-            <article class='featured-snippet'>
+            <br><article class='featured-snippet'>
                 <h3 class='featured-snippet__title'>How we work</h3>
                 <p class='featured-snippet__body featured-snippet__body--small'>Lorem ipsum dolor sit amet, sit tollit accommodare ei, cibo antiopam ei mea. No duo minim molestie, ne has deleniti forensibus voluptatibus. Solum ancillae pri ei, sanctus mandamus suavitate eos ei. Usu ad tollit commodo bonorum, vel ut iusto mandamus, latine ocurreret argumentum te pri. Ceteros tibique constituam ei mea, modus definiebas honestatis nam at.</p>
                 <a href='#' class='featured-snippet__body'>Read more.....</a>
@@ -100,43 +101,43 @@
             <div class='images-row'>
                 <div class='single-image'>
                     <img src='pics/slide1.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide2.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide3.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
             </div>
             <div class='images-row'>
                 <div class='single-image'>
                     <img src='pics/slide4.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide5.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide1.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
             </div>
             <div class='images-row'>
                 <div class='single-image'>
                     <img src='pics/slide2.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide3.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
                 <div class='single-image'>
                     <img src='pics/slide4.jpg' alt='our work' width=263 height=146>
-                    <div class='single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
+                    <div class='js_sel-img-hover single-image__hover'><p class='no-uppercase'>Click to full view</p></div>
                 </div>
             </div>
         </section>

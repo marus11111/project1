@@ -27,12 +27,13 @@
         width: 25%;
     }
     max-width: 500px;
+    display: inline-block;
+    margin: 1em;
+    transition: width 0.5s, height 0.5s;
     img {
         width: 100%;
         height: auto;
     }
-    display: inline-block;
-    margin: 1em;
     &__hover {
         position: absolute;
         top: 0;

@@ -2,8 +2,10 @@
     position:fixed;
     display: none;
     opacity: 0;
-    width: 100%;
-    height: 100%;
+    top: 25%;
+    right: 10%;
+    width: 80%;
+    height: 65%;
     @media screen and (min-width: 950px){
         position: absolute;
         display: block;
@@ -16,31 +18,13 @@
     transition: right 1s, width 1s, height 1s, background-color 1s, opacity 0.5s;
     z-index: 1;
     
-    
-    &__dark-bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        @media screen and (min-width: 950px){
-            display: none;
-        }
-    }
-    
     color: #ff7200;
     
     ul {
-        position: absolute;
-        top: 20%;
-        right: 10%;
-        width: 80%;
-        height: 21em;
+        width: 100%;
+        height: 100%;
         background-color: rgba(140, 140, 140, 0.8);
         @media screen and (min-width: 950px){
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
             background-color: rgba(140, 140, 140, 0.6);
         }
         box-shadow: inset 0 0 0 2px rgba(175, 176, 170, 0.5); // imitates border, but lets li elements overlap this imitated "inner" border
@@ -53,18 +37,18 @@
         position: relative;
         box-sizing: border-box;
         font-weight: 400;
-        @media screen and (max-width: 950px){
+        @media screen and (max-width: 949px){
             top: 50%;
             transform: translateY(-5em);  
         }
         font-size: 1.5em;
         line-height: 2em;
-        height: 2em;
         width: 100%;
-        @media screen and (min-width: 950px){
+        @media screen and (min-width: 950px), screen and (orientation: landscape) and (max-height: 599px) {
+            font-size: 1em;
+        }
+        @media screen and (min-width: 950px) {
             height: 100%;
-            width: auto;
-            font-size: 1em; //22
             width: auto;
         }
         padding: 0 1em;

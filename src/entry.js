@@ -2,6 +2,8 @@ require('./scss/entry.scss');
 require('./eventHandlers/scrollHandler');
 require('./eventHandlers/resizeHandler');
 require('./navigation/hamburgerMenu');
+require('./media/openCloseVideo');
+require('./media/openClosePhoto');
 var drawCircles = require('./canvas/circles').drawCircles;
 var CanvasOptions = require('./canvas/CanvasOptions').CanvasOptions;
 var baseWidth = require('./eventHandlers/resizeHandler').baseWidth;

@@ -1,6 +1,6 @@
 var pi = Math.PI;
 
-var CanvasOptions = function CanvasOptions(bodyWidth){
+var CanvasOptions = function CanvasOptions(windowWidth){
     this.startAngle = pi*1.5;
     this.skill1 = {
         percent: 85,
@@ -18,19 +18,19 @@ var CanvasOptions = function CanvasOptions(bodyWidth){
         percent: 80,
         description: 'Organising'
     }
-    if (bodyWidth > 650){
-        this.width = 0.7*bodyWidth;
+    if (windowWidth > 650){
+        this.width = 0.7*windowWidth;
         this.height = 0.28*this.width;
         this.radius = 0.3*this.height;
         this.y = this.height/2.6;
         this.descriptionY = 1.8*this.radius;
-        this.skill1.x = 0.1*this.width;
-        this.skill2.x = 0.3666*this.width;
-        this.skill3.x = 0.6334*this.width;
-        this.skill4.x = 0.9*this.width;
+        this.skill1.x = 0.12*this.width;
+        this.skill2.x = 0.3733*this.width;
+        this.skill3.x = 0.6266*this.width;
+        this.skill4.x = 0.88*this.width;
     }
     else {
-        this.width = 0.8*bodyWidth;
+        this.width = 0.8*windowWidth;
         this.height = this.width;
         this.radius = 0.15*this.height;
         this.y = this.height/4;
@@ -42,7 +42,6 @@ var CanvasOptions = function CanvasOptions(bodyWidth){
         this.skill4.x = 0.75*this.width;  
         this.skill4.y = this.y*3;
     }
-    console.log(this);
 }
 
 exports.CanvasOptions = CanvasOptions;

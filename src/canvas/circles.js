@@ -20,7 +20,7 @@ function drawSingleCircle(x, y, radius, start, currentPercent, description, desc
     ctx.fillText(currentPercent+'%', x+0.05*radius, y+0.11*radius, 2*radius);
     
     ctx.textAlign = 'center';
-    ctx.font = 'bold 0.9em Roboto';
+    ctx.font = 'bold 1.1em Roboto';
     ctx.fillStyle = 'black';
     ctx.fillText(description, x, y+descriptionY, 3*radius);
     
