@@ -5,8 +5,9 @@ var hamburgerButton = DOM.hamburgerButton;
 function popUpShowMenu(windowWidth) {
     if (windowWidth>=950){
         menu.css('display', 'block').fadeTo(0.5, 1);
+        hamburgerButton.css('display', 'none');
     }
-    else {
+    else if (windowWidth<950){
         hamburgerButton.css('display', 'block').fadeTo(0.5, 1);
     }
 }

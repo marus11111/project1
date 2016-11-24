@@ -4,4 +4,4 @@ webpack.config.production.js
 webpack.config.development.js
 karma.conf.js
 Photoshop
-pics
+src/pics

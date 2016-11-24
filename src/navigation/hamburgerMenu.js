@@ -2,6 +2,7 @@ var DOM = require('../helpers/getDOMElements');
 var hamburgerButton = DOM.hamburgerButton;
 var hamburgerLines = DOM.hamburgerLines;
 var menu = DOM.menu;
+var menuItems = DOM.menuItems;
 var darkBg = DOM.darkBg;
 
 var menuOpen = false;
@@ -46,3 +47,8 @@ function hamburgerClick() {
 }
 
 hamburgerButton.click(hamburgerClick);
+menuItems.click(function(){
+    if (window.innerWidth < 950) {
+        closeMenu();
+    }
+});

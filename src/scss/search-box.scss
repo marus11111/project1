@@ -45,9 +45,12 @@
             style: solid;
             width: 2px;
         }
-        background-color: transparent;
-        img {
-            height: 70%;
+        background: {
+            image: url($search);
+            position: center;
+            size: 50%;
+            repeat: no-repeat;
+            color: transparent;
         }
     }
 }
