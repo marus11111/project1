@@ -3,17 +3,17 @@ var menu = DOM.menu;
 var hamburgerButton = DOM.hamburgerButton;
 
 function popUpShowMenu(windowWidth) {
-    if (windowWidth>=950){
+    if (windowWidth>=1070){
         menu.css('display', 'block').fadeTo(0.5, 1);
         hamburgerButton.css('display', 'none');
     }
-    else if (windowWidth<950){
+    else if (windowWidth<1070){
         hamburgerButton.css('display', 'block').fadeTo(0.5, 1);
     }
 }
 
 function popUpHideMenu(windowWidth) {
-    if (windowWidth>=950){
+    if (windowWidth>=1070){
         menu.fadeTo(0.5, 0);
         setTimeout(function(){
             menu.css('display', 'none');

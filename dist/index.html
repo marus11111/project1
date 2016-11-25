@@ -4,7 +4,7 @@
         <title>Potfolio - projekt 1</title>
         <link href="https://fonts.googleapis.com/css?family=Dosis%7CRoboto+Condensed%7CRoboto:100,400,700" rel="stylesheet">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link href='style.css' rel='stylesheet'>
+        <!--<link href='style.css' rel='stylesheet'>-->
     </head>
     <body>
         <div class='pop-up__dark-bg' id='dark-bg'>
@@ -17,11 +17,11 @@
             </nav>
             <nav id='menu' class='menu'>
                 <ul>
-                    <li class='js_sel-item menu__item'>Home</li>
-                    <li class='js_sel-item menu__item'>Services</li>
-                    <li class='js_sel-item menu__item'>Design</li>
-                    <li class='js_sel-item menu__item'>About</li>
-                    <li class='js_sel-item menu__item'>FAQ</li>
+                    <li class='js_sel-item menu__item'><a href='#'>Home</a></li>
+                    <li class='js_sel-item menu__item'><a href='#about'>About</a></li>
+                    <li class='js_sel-item menu__item'><a href='#team'>Our Team</a></li>
+                    <li class='js_sel-item menu__item'><a href='#blogs'>Blogs</a></li>
+                    <li class='js_sel-item menu__item'><a href='#contact'>Contact</a></li>
                 </ul>
             </nav>
             <div class='slider'>
@@ -50,7 +50,7 @@
                 <button type='submit' class='search-box__button'></button>
             </form>
         </header>
-        <section>
+        <section id='about'>
             <h2 class='section-heading'>Our experience</h2>
             <canvas width='864' height='150' class='circles' id='canvas'></canvas>
         </section>
@@ -139,67 +139,91 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id='team'>
             <h2 class='section-heading'>Our engineers</h2>
             <div class='engineer'>
-                 <img class='engineer__image' src='pics/engineer1.png' alt='Baddaima John'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--1' src='pics/sprite-engineers.png' alt='Baddaima John'>
+                </div>
                 <h4 class='engineer__name'>Baddaimma John</h4>
                 <p class='engineer__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class='engineer'>
-                <img class='engineer__image' src='pics/engineer2.png' alt='Abul Bepari'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--2' src='pics/sprite-engineers.png' alt='Abul Bepari'>
+                </div>
                 <h4 class='engineer__name'>Abul Bepari</h4>
                 <p class='engineer__text no-uppercase'> Lorem ipsum dolor sit amet, consectetur adipisicing elit, se do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class='engineer'>
-                <img class='engineer__image' src='pics/engineer3.png' alt='Moynar Baap'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--3' src='pics/sprite-engineers.png' alt='Moynar Baap'>
+                </div>
                 <h4 class='engineer__name'>Moynar Baap</h4>
                 <p class='engineer__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class='engineer'>
-                <img class='engineer__image' src='pics/engineer4.png' alt='Kudus Bepari'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--4' src='pics/sprite-engineers.png' alt='Kudus Bepari'>
+                </div>
                 <h4 class='engineer__name'>Kudus Bepari</h4>
                 <p class='engineer__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class='engineer'>
-                <img class='engineer__image' src='pics/engineer5.png' alt='Akimma Pula'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--5' src='pics/sprite-engineers.png' alt='Akimma Pula'>
+                </div>
                 <h4 class='engineer__name'>Akimma Pula</h4>
                 <p class='engineer__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class='engineer'>
-                <img class='engineer__image' src='pics/engineer6.png' alt='Chowedry Saheb'>
+                <div class='engineer__image-wrap'>
+                    <img class='engineer--6' src='pics/sprite-engineers.png' alt='Chowedry Saheb'>
+                </div>
                 <h4 class='engineer__name'>Chowedry Saheb</h4>
                 <p class='engineer__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
         </section>
-        <section class='blogs'>
+        <section class='blogs' id='blogs'>
             <h2 class='section-heading'>BLOGS</h2>
-            <div class='blogs__single-blog'>
-                <img class='blogs__single-blog__image' src='pics/blog1.png' alt='blog 1 picture'>
+            <div class='single-blog'>
+                <div class='single-blog__image-wrap'>
+                    <div class='single-blog__img-ratio'>
+                        <img class='single-blog__image single-blog__image--1' src='pics/sprite-blogs.jpg' alt='blog 1 picture'>
+                    </div>
+                </div>
                 <article>
-                    <h5 class='blogs__single-blog__title no-uppercase'>How to Organize Your Office</h5>
-                    <p class='blogs__single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a class='blogs__single-blog__more' href='#'>Read more .....</a>
+                    <h5 class='single-blog__title no-uppercase'>How to Organize Your Office</h5>
+                    <p class='single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a class='single-blog__more' href='#'>Read more .....</a>
                 </article>
             </div>
-            <div class='blogs__single-blog'>
-                <img class='blogs__single-blog__image' src='pics/blog2.png' alt='blog 2 picture'>
+            <div class='single-blog'>
+                <div class='single-blog__image-wrap'>
+                    <div class='single-blog__img-ratio'>
+                        <img class='single-blog__image single-blog__image--2' src='pics/sprite-blogs.jpg' alt='blog 2 picture'>
+                    </div>
+                </div>
                 <article>
-                    <h5 class='blogs__single-blog__title no-uppercase'>Office ENVIRONMENT</h5>
-                    <p class='blogs__single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a class='blogs__single-blog__more' href='#'>Read more .....</a>
+                    <h5 class='single-blog__title no-uppercase'>Office ENVIRONMENT</h5>
+                    <p class='single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a class='single-blog__more' href='#'>Read more .....</a>
                 </article>
             </div>
-            <div class='blogs__single-blog'>
-                <img class='blogs__single-blog__image' src='pics/blog3.png' alt='blog 3 picture'>
+            <div class='single-blog'>
+                <div class='single-blog__image-wrap'>
+                    <div class='single-blog__img-ratio'>
+                        <img class='single-blog__image single-blog__image--3' src='pics/sprite-blogs.jpg' alt='blog 3 picture'>
+                    </div>
+                </div>
                 <article>
-                    <h5 class='blogs__single-blog__title no-uppercase'>10 Tips for Furniture Organisation</h5>
-                    <p class='blogs__single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a class='blogs__single-blog__more' href='#'>Read more .....</a>
+                    <h5 class='single-blog__title no-uppercase'>10 Tips for Furniture Organisation</h5>
+                    <p class='single-blog__text no-uppercase'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a class='single-blog__more' href='#'>Read more .....</a>
                 </article>
             </div>
         </section>
-        <div class='forms'>
+        <div class='forms' id='contact'>
             <form class='forms__subscribe'>
                 <h4>Subscribe</h4><br>
                 <input class='forms__input' type='text' placeholder='name'>
@@ -216,10 +240,10 @@
                 <button type='submit' class='forms__button forms__button--submit'>Submit</button>
             </form>
             <ul class='social-logos'>
-                <li><a href='#'><img src='pics/facebook.png' alt='facebook logo'></a></li>
-                <li><a href='#'><img src='pics/twitter.png' alt='twitter logo'></a></li>
-                <li><a href='#'><img src='pics/google-plus.png' alt='google plus logo'></a></li>
-                <li><a href='#'><img src='pics/linkedin.png' alt='linkedin logo'></a></li>
+                <li><a href='#'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAMAAAAocOYLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB3VBMVEU7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg8WpgzUpQtTZEsTZAwUJI8WplAXZovT5IZPIYyUpNCX5xEYJ1DX5xAXZs6WJg+W5oqS48sTJCaqcrb4ezx8/jz9PnEzuA2VZU3VZYhQ4rEzeD////c4u0oSY0cP4hxhrTq7vQmR4w1VJQVOYSisM7w8vecq8uVpceDl745V5epttKzv9cAI3YSNoMfQok+XJpBXpsnSI4AGXCVpsims9EAHnMWOYUiRIs/XJpof7B/krvN1eXW3OqBlLyPoMR8kLo6WZgSN4O1wNjX3eoeQIk4VpYWOoWuu9QXO4UXO4als9CWpsdJZaCyvtfByt9XcKdEYZ0uTpIAJnibqsuuutUGLHwjRIsyUZO2wdkfQYkYO4antdG5w9qwvNbDzOAcP4dWcKduhLNbdKk0U5QrS48dP4gdQIgoSY4/XZpKLpqFAAAANXRSTlMAM3qy1uvyezRYxcYqv8AsWv5dbW5VVh/Oz01O09Urfn+3uNvc7/D2LU8gWW9bXsHH1+yzNYAiTkIAAAABYktHRFGUaXwqAAABlElEQVQoz33T9VsCMRgH8Clpgp1gK4qtswUVFAsVGxO7sbu7O7D/VsfdvTsUH74/be/nudt7tw0hGjd3gVAkFgkFEilyjocn5uPl8Ue9ffDv+MocWe6HneLPcwDU8nB+QWFBUTEzCQQOAi4p1WjLyit0enYazHIIcGWVobqmtq62vsrIFkIYDwVvaGwy2dPcwnmYncNpR61tDJvaOzq5SgTxSOrmLoLdPb192n6uokBISVmvsRAfGBwaHimGmgxFwXB0bHyC+OTU9Iw1D4rRKAaGhtm5eeILi0vL9P04FsVxo5XVNROX9Y1N8HiUAL5lAd/e0YMnoiTw3T3w/WnacxJ9HhsP8CHBo5LjEyPmn4f1sfX07Jz4xeXVtRXz69P+yffbV7i5pc0z/Ue59GikcukqhBQuXEj2J8KFJzvuv7Mz+49SwO/uiT9s8J7CHjA15+ZH4k/P1OVwQAPZufbFZrO9vsHPT+UPeBpT0L1/fH58fXOc7nhBlL74dzJUf26Y2vH+Zar/uaFSiSArW5ydlSPJ5Ys/ZyzEBB9kJxUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMTEtMjBUMTc6NTY6MjQrMDA6MDBEbjbTAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTExLTIwVDE3OjU2OjI0KzAwOjAwNTOObwAAAABJRU5ErkJggg==' alt='facebook logo'></a></li>
+                <li><a href='#'><img src='data:image/png;base64,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' alt='twitter logo'></a></li>
+                <li><a href='#'><img src='data:image/png;base64,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' alt='google plus logo'></a></li>
+                <li><a href='#'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACi1BMVEUAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAerkAfboAdbcAZK8AY64Aa7IAfLoAe7kAdLYAdrdwstSOxN8zksQAbbMAebgAZ7COwNr//////Pclh8AAeLgAabHP4+v/+fRIoswAa7FJm8nw9vX///yu0OIJdrcAdbYAebkAf7sAYK0AbLEAersAXKsAcbUAfrsAZK4AcLQAaLAAZq8AZa8AcrYylMVNo85FnMlTo80CfLoAd7hWpc5jrNFkr9QdiMBpr9OcyuCWx95Sos0AYq6Yxt3///kGfbr/+fWnzeChyN7///2lyt4AbLOFvdj/+/fu8PIAcrXe6O3//vjx8fH///j09PP29PNirdGEvNj/+vbs7/Hc5+3//ff09PKIwNo4f7tztdX8+vfE3OcAbrP///q21eQAYa241uT//vfe6e0Dfbrd6O2FvNiOwNvg6e4If7wFfbqQwtsAaLGTw9wHfruRwtuVxNwFfLoAc7be6e7/+/bu8PHg6u6Sw9uWxdzf6e0AYq2Zxt0GfLqozeAAZbCs0OEIf7sAcbQ2lcZpsNRortJhqtACe7pcqM9or9I7l8c9mMdap84DfLoAd7cAbrQAY60Ae7oAZrAAfbsB/Oc3AAAAR3RSTlMABlGRw+HxklIIDoLk5oQQXOnsX5WYqq6Wm1NYB/f6C4GHBPJOnsjO5ej0yZ9QBfP4ign5/AxWoLOZnGHt72QShurriBRU4xjGo9QAAAABYktHRFjttcSOAAACBElEQVQoz2NggAFGJmYWVjY2VhZ2Dk4GdMDFzeMOB7x8/KiyAoLuKEBIGFlWxB0DiCJkxdyxAHGYrIS7u4enl7ePrx+KvCREVgrI9A8IDAoOQZV2lwbJysi6u4eGhUdEREaFoErLyQOlFYCM6JjYiLiIeC806xUZGJSUQYyExKTklNQ0iGhoOlRalpFBBczIyMzKzsnNC8v3LgjILywqDvAFC3OAnA0EJaVl5RWVVdU1tXU+9Q2NTT4FYHlVBjWwdHNLRERrW257RERHZ0RXV0R3D9gidQYNsHRxb1dff9uEiZMmt0dMaZ06LWK6N0hYk0ELIj0jeeastgmz58xtnTd/wcK5yYsWBwCFtdCllyxdlpO5fMmKlasmgKV5kaVXz+la4+1XvLZrzrr1E8CGayOkNwClkzeGRW/anDxn9ZYJYKeJoklvBUpvg0nrMOgipLfv2BmJKi3FoKcPll6TvGv39h175iTvBUrvS16xHyRtIMPAwAeSPnAwImLJoZJdERGHvaKPHI2IaD923N3dEBhjRsZA6dwTJ0+dPlN19tzJ8xPSd1w4ee7ipcvuJqagCDcDSudduZpf5H7tuvfVkBvuHiFXvcPSr7kLQJKLpDtWYA5LbOLYZC0QSdUSU9YKOaFb26BK2tqhZhN7B0eEpJOzC0Yuk3cVVXNjY+PRtjQzhQsCAL9LDOMuyoRSAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTExLTIwVDE3OjU4OjI3KzAwOjAwa08c/QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0xMS0yMFQxNzo1ODoyNyswMDowMBoSpEEAAAAASUVORK5CYII=' alt='linkedin logo'></a></li>
             </ul>
         </div>
         <footer class='footer clearfix'>

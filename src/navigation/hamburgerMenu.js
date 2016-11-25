@@ -16,7 +16,7 @@ function openMenu() {
     hamburgerLines.eq(2).css('transform', 'rotate(45deg) scale(1.4142) translate(9%, 50%)');
     
     darkBg.click(function() {
-        if (window.innerWidth < 950) {
+        if (window.innerWidth < 1070) {
             closeMenu();
         }
     });
@@ -48,7 +48,7 @@ function hamburgerClick() {
 
 hamburgerButton.click(hamburgerClick);
 menuItems.click(function(){
-    if (window.innerWidth < 950) {
+    if (window.innerWidth < 1070) {
         closeMenu();
     }
 });

@@ -4,10 +4,24 @@
     max-width: 430px;
     display: inline-block;
     margin: 0.5em 3em;
-    &__image {
+    
+    //wrapper necessary to use sprite img
+    &__image-wrap {
+        position: relative;
+        width: 127px;
+        height: 127px;
+        overflow: hidden;
         float: left;
         margin: 1em;
     }
+    
+    @for $i from 1 through 6 {
+        &--#{$i} {
+            position: absolute;
+            left: -($i - 1)*100%;
+        }
+    }
+    
     &__name {
         margin-top: 1.7em;
     }

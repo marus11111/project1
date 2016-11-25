@@ -11,7 +11,7 @@ var timeout;
 function resizeHandler(){
     windowWidth = window.innerWidth;
     darkBg.css('display', 'none');
-    if (windowWidth >= 950){
+    if (windowWidth >= 1070){
         menu.css({
             'display': 'block',
             'opacity': 1

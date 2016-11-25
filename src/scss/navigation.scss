@@ -6,13 +6,13 @@
     right: 10%;
     width: 80%;
     height: 68%;
-    @media screen and (min-width: 950px){
+    @media screen and (min-width: 1070px){
         position: absolute;
         display: block;
         opacity: 1;
         top: 9.7%;
         right: 10%;
-        width: 28em;
+        width: 31em;
         height: 1.9em;
     }
     transition: right 1s, width 1s, height 1s, background-color 1s, opacity 0.5s;
@@ -24,7 +24,7 @@
         width: 100%;
         height: 100%;
         background-color: rgba(140, 140, 140, 0.8);
-        @media screen and (min-width: 950px){
+        @media screen and (min-width: 1070px){
             background-color: rgba(140, 140, 140, 0.6);
         }
         box-shadow: inset 0 0 0 2px rgba(175, 176, 170, 0.5); // imitates border, but lets li elements overlap this imitated "inner" border
@@ -37,17 +37,17 @@
         position: relative;
         box-sizing: border-box;
         font-weight: 400;
-        @media screen and (max-width: 949px){
+        @media screen and (max-width: 1069px){
             top: 50%;
             transform: translateY(-5em);  
         }
         font-size: 1.5em;
         line-height: 2em;
         width: 100%;
-        @media screen and (min-width: 950px), screen and (orientation: landscape) and (max-height: 375px) {
+        @media screen and (min-width: 1070px), screen and (orientation: landscape) and (max-height: 375px) {
             font-size: 1em;
         }
-        @media screen and (min-width: 950px) {
+        @media screen and (min-width: 1070px) {
             height: 100%;
             width: auto;
         }
@@ -68,7 +68,7 @@
     }
     
     &--fixed {
-        @media screen and (min-width: 950px){
+        @media screen and (min-width: 1070px){
             top: -1px;
             right: 0;
             width: 100%;
@@ -87,7 +87,7 @@
 }
 
 .hamburger {
-    @media screen and (min-width: 950px){
+    @media screen and (min-width: 1070px){
         display:none;
     }
     position: fixed;

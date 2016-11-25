@@ -7,33 +7,55 @@
     overflow: hidden; 
     margin-top: 3em;
     color: white; //heading only
-    &__single-blog {
-        display: inline-block;
-        vertical-align: top;
-        margin: 0.5em 1.5em 2.5em 1.5em;
-        width: 70%;
-        max-width: 400px;
-        @media screen and (min-width: 900px) {
-            width: 20%;
+}
+
+.single-blog {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.5em 1.5em 2.5em 1.5em;
+    width: 70%;
+    max-width: 400px;
+    @media screen and (min-width: 900px) {
+        width: 20%;
+    }
+    font-size: 0.9em;
+    text-align: left;
+    color: rgb(177,177,177);
+    
+    //wrapper and keeping it's ratio constant are necessary to use sprite img
+    &__image-wrap {
+        width: 100%; 
+        height: 0;
+    }
+    &__img-ratio {
+        position: relative;
+        padding-bottom: 60.0682594%;
+        overflow: hidden;
+    }
+    &__image {
+        position: absolute;
+        height: 101%; //making picture slightly bigger than wrapper was necessary to get rid of very thin 'border' from previous or next image on sprite, that was appearing on some resolutions
+        width: auto;
+        
+        @for $i from 1 through 3 {
+            &--#{$i} {
+                left: -($i - 1)*101.5%;
+            }
         }
-        font-size: 0.9em;
-        text-align: left;
-        color: rgb(177,177,177);
-        &__image {
-            width: 100%;
-        }
-        &__title {
-            margin: 0.5em 0;
-            color: rgb(255,114,0);
-        }
-        &__text {
-            margin-top: 1em;
-            font-size: 0.7em;
-            line-height: 1.6;
-        }
-        &__more {
-            color: inherit; //for some reason a element doesnt inherit color automatically
-            line-height: 2;
-        }
+    }
+    
+    &__title {
+        margin: 0.5em 0;
+        padding-top: 60.0682594%; //image-wrap has height 0 and without padding-top text is being overlapped by img-ratio padding bottom
+        color: rgb(255,114,0);
+    }
+    &__text {
+        margin-top: 1em;
+        font-size: 0.7em;
+        line-height: 1.6;
+    }
+    &__more {
+        color: inherit; //for some reason a element doesnt inherit color automatically
+        line-height: 2;
     }
 }
