@@ -1,24 +1,44 @@
 .engineer {
-    text-align: left;
-    width: 80%;
-    max-width: 430px;
+    position: relative;
     display: inline-block;
-    margin: 0.5em 3em;
+    width: 95%;
+    max-width: 430px;
+    margin: 0.5em 0;
+    @media screen and (min-width:600px){
+        width: 80%;
+        margin: 0.5em 3em;
+    }
+    text-align: left;
     
     //wrapper necessary to use sprite img
     &__image-wrap {
-        position: relative;
-        width: 127px;
-        height: 127px;
+        position: absolute;
+        left:0;
+        top: 50%;
+        transform:translateY(-50%);
+        width: 90px;
+        height: 90px;
+        @media screen and (min-width:600px){
+            width: 127px;
+            height: 127px;
+        }
         overflow: hidden;
-        float: left;
         margin: 1em;
     }
     
     @for $i from 1 through 6 {
         &--#{$i} {
             position: absolute;
+            height: 100%;
+            width: auto;
             left: -($i - 1)*100%;
+        }
+    }
+    
+    article {
+        padding-left: 123px;
+        @media screen and (min-width:600px){
+            padding-left: 160px;
         }
     }
     

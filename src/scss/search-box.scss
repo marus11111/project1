@@ -6,7 +6,7 @@
     height: 3.3em;
     top:62.8%;
     background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: inset 0 0 0 2px #afb0aa;// imitates border, but lets the button borders overlap this imitated "inner" border
+    box-shadow: inset 0 0 0 2px rgb(175,176,170);// imitates border, but lets the button borders overlap this imitated "inner" border
     border-radius: 10px;     
     
     form {
@@ -26,7 +26,7 @@
             size: 1em; 
         }
         text-align: center;
-        &::placeholder {
+        &:not(:focus)::placeholder {
             color: rgba(0, 0, 0, 0.6);
         }
     }
@@ -40,7 +40,7 @@
         height: 100%;
         cursor: pointer;
         border: {
-            color: #aaaaaa;
+            color: rgb(170,170,170);
             radius: 10px;
             style: solid;
             width: 2px;

@@ -68,18 +68,6 @@ a {
 section {
     overflow: hidden;
 }
-
-.section-heading {
-    margin-top: 3em;
-    margin-bottom: 1em;
-    font: {
-        weight: 400;
-    }
-    @media screen and (min-width: 650px) and (min-height: 650px){
-        font-size: 30px;
-    }
-}
-
 input, textarea, button {
     font-family: inherit;
     text-transform: inherit;
@@ -96,6 +84,16 @@ textarea {
     color:transparent;
 }
 
+.section-heading {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font: {
+        weight: 400;
+    }
+    @media screen and (min-width: 650px) and (min-height: 650px){
+        font-size: 30px;
+    }
+}
 .no-uppercase {
     text-transform: none;
 }

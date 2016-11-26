@@ -18,8 +18,6 @@
     transition: right 1s, width 1s, height 1s, background-color 1s, opacity 0.5s;
     z-index: 1;
     
-    color: #ff7200;
-    
     ul {
         width: 100%;
         height: 100%;
@@ -53,7 +51,7 @@
         }
         padding: 0 1em;
         cursor: pointer;
-        color: #000000;
+        color: black;
         border: {
             radius: 10px;
             style: solid;
@@ -62,7 +60,7 @@
         }
 
         &:hover {
-            border-color: #afb0aa;
+            border-color: rgb(175,176,170);
             background-color: rgba(140, 140, 140, 0.9);
         } 
     }

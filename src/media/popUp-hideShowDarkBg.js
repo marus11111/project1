@@ -2,6 +2,8 @@ var DOM = require('../helpers/getDOMElements');
 var darkBg = DOM.darkBg;
 var closePopUp = DOM.closePopUp;
 
+//show or hide the dark screen that appears when menu, video or photo is opened
+
 function popUpShowDark() {
     closePopUp.css('display', 'block');
     darkBg.css('display', 'block').fadeTo(0.5, 1);

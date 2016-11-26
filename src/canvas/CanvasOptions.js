@@ -1,3 +1,5 @@
+//options used by functions that draw circular skill bars
+
 var pi = Math.PI;
 
 var CanvasOptions = function CanvasOptions(windowWidth){

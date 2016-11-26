@@ -1,3 +1,5 @@
+//options for video/photo enlargement
+
 var mediaOpenOptions = {
     'position': 'fixed',
     'z-index': 1,
