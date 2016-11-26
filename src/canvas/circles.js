@@ -41,7 +41,7 @@ function drawThinCircle(x, y, radius, percent, description, descriptionY) {
 function drawSingleCircle(x, y, radius, start, currentPercent, description, descriptionY){
     
     //clear canvas from previous percent
-    ctx.clearRect(x-radius-15, y-radius-15, 3*radius, 3.5*radius);
+    ctx.clearRect(x-radius-15, y-radius-15, 3*radius, 3.3*radius);
     
     //draw thin grey circle and text
     drawThinCircle(x, y, radius, currentPercent, description, descriptionY);

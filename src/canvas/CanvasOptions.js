@@ -33,16 +33,16 @@ var CanvasOptions = function CanvasOptions(windowWidth){
     }
     else {
         this.width = 0.8*windowWidth;
-        this.height = this.width;
+        this.height = 1.05*this.width;
         this.radius = 0.15*this.height;
         this.y = this.height/4;
         this.descriptionY = 1.6*this.radius;
         this.skill1.x = 0.25*this.width;
         this.skill2.x = 0.75*this.width;
         this.skill3.x = 0.25*this.width;  
-        this.skill3.y = this.y*3;
+        this.skill3.y = this.y*3 - 0.1*this.radius;
         this.skill4.x = 0.75*this.width;  
-        this.skill4.y = this.y*3;
+        this.skill4.y = this.y*3 - 0.1*this.radius;
     }
 }
 

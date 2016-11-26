@@ -18,9 +18,15 @@ function openMenu() {
     darkBg.css('display', 'block').fadeTo(0.5, 1);
     
     //transform lines on button to create X
-    hamburgerLines.eq(0).css('transform', 'rotate(-45deg) scale(1.4142) translate(9%, -50%)');
+    hamburgerLines.eq(0).css({
+        'top': '50%',
+        'transform': 'translate(-50%, -50%) rotate(-45deg)'
+    });
     hamburgerLines.eq(1).fadeTo(0.5, 0);
-    hamburgerLines.eq(2).css('transform', 'rotate(45deg) scale(1.4142) translate(9%, 50%)');
+    hamburgerLines.eq(2).css({
+        'top': '50%',
+        'transform': 'translate(-50%, -50%) rotate(45deg)'
+    });
     
     //close menu by clicking on background
     darkBg.click(closeMenu);
@@ -39,10 +45,16 @@ function closeMenu() {
         darkBg.css('display', 'none');
     }, 500);
     
-    //transform lines on button so that the form hamburger again
-    hamburgerLines.eq(0).css('transform', 'none');
+    //transform lines on button so that they form hamburger again
+    hamburgerLines.eq(0).css({
+        'top': '22%',
+        'transform': 'translate(-50%,-50%)'
+    });
     hamburgerLines.eq(1).fadeTo(0.5, 1);
-    hamburgerLines.eq(2).css('transform', 'none');
+    hamburgerLines.eq(2).css({
+        'top': '78%',
+        'transform': 'translate(-50%,-50%)'
+    });
     
     //remove event listener - the same elements are used to close 
     //video or photo, so event listeners are removed to prevent conflicts (e.g.

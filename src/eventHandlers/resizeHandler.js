@@ -47,13 +47,16 @@ function resizeHandler(){
     //If scroll is attached, then canvas wasn't yet scrolled to and 
     //drawn - only options and initial 0% circles will be updated.
     //If scroll isn't attached anymore, it means canvas was already drawn 
-    //and full redraw will be performed. 
-    if($._data($(document)[0], 'events').scroll){
-        timeout = setTimeout(function(){
-            resizeCanvasOptions = new CanvasOptions(windowWidth);
-            drawInitialCircles(resizeCanvasOptions);
-            passNewOptions(resizeCanvasOptions);
-        }, 500);
+    //and full redraw will be performed.
+    var documentEvents = $._data($(document)[0], 'events');
+    if(documentEvents){
+        if(documentEvents.scroll){
+            timeout = setTimeout(function(){
+                resizeCanvasOptions = new CanvasOptions(windowWidth);
+                drawInitialCircles(resizeCanvasOptions);
+                passNewOptions(resizeCanvasOptions);
+            }, 500);
+        }
     }
     else{
         timeout = setTimeout(function(){
