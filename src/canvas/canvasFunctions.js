@@ -87,17 +87,25 @@ function drawCircles(options){
             }
         }
         percent++;
-        if (percent==100){
+        if (percent===100){
             clearInterval(interval);
         }
     }, 20);
 }
 
 
-//draws circles after scrolling to canvas
+//Draws circles after scrolling to canvas.
+//canvasDrawn variable and isCanvasDrawn function are there 
+//to inform resize handler whether it should just update canvas 
+//options and redraw initial 0% circles or redraw full canvas
+var canvasDrawn = false;
+function isCanvasDrawn() {
+    return canvasDrawn;
+}
 function drawCirclesOnScroll(options){
     if((canvas.getBoundingClientRect().bottom - window.innerHeight) < 0){
         drawCircles(options);
+        canvasDrawn = true;
         $(document).off('scroll');
     }
 }
@@ -120,3 +128,4 @@ $(document).scroll(function(){
 exports.drawCircles = drawCircles;
 exports.drawInitialCircles = drawInitialCircles;
 exports.getNewOptions = getNewOptions;
+exports.isCanvasDrawn = isCanvasDrawn;

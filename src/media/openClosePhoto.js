@@ -2,9 +2,6 @@ var DOM = require('../helpers/getDOMElements');
 var imageHover = DOM.imageHover;
 var darkBg = DOM.darkBg;
 var closePopUp = DOM.closePopUp;
-var mediaOptions = require('./mediaCSSOptions');
-var openOptions = mediaOptions.mediaOpenOptions;
-var closeOptions = mediaOptions.mediaCloseOptions;
 var hideShowMenu = require('./popUp-hideShowMenu');
 var showMenu = hideShowMenu.popUpShowMenu;
 var hideMenu = hideShowMenu.popUpHideMenu;
@@ -23,22 +20,8 @@ function enlargePhoto(photoIndex) {
     hideMenu(windowWidth);
     showDark();
     
-    //hide element that normally is on top of photo and is visible on hover
-    hover.css('display', 'none');
-    
-    //resize and reposition photo
-    photoWrapper.css(openOptions).css('max-width', 'none');
-    if (windowHeight>windowWidth){
-        photoWrapper.css('width', '95%'); 
-    }
-    else {
-        photoWrapper.css('width', 0.7*windowWidth+'px');
-    }
-    
-    setTimeout(function(){
-        photoWrapper.css('transition', 'none');
-    }, 500);
-    
+    //resize and position photo
+    photoWrapper.addClass('single-image--enlarged');
     
     //close photo by clicking on dark background or close button
     darkBg.click(function(){
@@ -58,20 +41,8 @@ function minimizePhoto(photoIndex, windowWidth){
     showMenu(windowWidth);
     hideDark();
     
-    //bring back element that is on top of photo
-    hover.css('display', 'block');
-    
-    //resize and reposition photo
-    photoWrapper.css(closeOptions).css('max-width', '500px'); 
-    if (windowWidth >= 950){
-        photoWrapper.css('width', '25%');
-    }
-    else {
-        photoWrapper.css('width', '80%');
-    }
-    setTimeout(function(){
-        photoWrapper.css('transition', 'width 0.5s, height 0.5s');
-    }, 500);
+    //resize and position photo to its origina state
+    photoWrapper.removeClass('single-image--enlarged');
     
     //remove event listeners - the same elements are used to close 
     //video or menu, so event listeners are removed to prevent conflicts (e.g.

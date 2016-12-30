@@ -2,9 +2,6 @@ var DOM = require('../helpers/getDOMElements');
 var videoButtons = DOM.videoButtons;
 var darkBg = DOM.darkBg;
 var closePopUp = DOM.closePopUp;
-var mediaOptions = require('./mediaCSSOptions');
-var openOptions = mediaOptions.mediaOpenOptions;
-var closeOptions = mediaOptions.mediaCloseOptions;
 var hideShowMenu = require('./popUp-hideShowMenu');
 var showMenu = hideShowMenu.popUpShowMenu;
 var hideMenu = hideShowMenu.popUpHideMenu;
@@ -28,21 +25,8 @@ function enlargeVideo(videoIndex) {
     hideMenu(windowWidth);
     showDark();
     
-    //hide big orange play button 
-    button.fadeTo(0.5, 0);
-    
     //resize and reposition video
-    videoWrapper.css(openOptions);
-    if (windowHeight>windowWidth){
-        videoWrapper.css('width', 0.95*windowWidth+'px'); 
-    }
-    else {
-        videoWrapper.css('width', 0.7*windowWidth+'px');
-    }
-    setTimeout(function(){
-        button.css('display', 'none');
-        videoWrapper.css('transition', 'none');
-    }, 500);
+    videoWrapper.addClass('video-wrapper--enlarged');
     
     //close video by clicking on dark background or close button
     darkBg.click(function(){
@@ -66,18 +50,8 @@ function minimizeVideo(videoIndex, windowWidth){
     showMenu(windowWidth);
     hideDark();
     
-    //resize and reposition video
-    button.css('display', 'block').fadeTo(0.5,1);
-    videoWrapper.css(closeOptions); 
-    if (windowWidth >= 900){
-        videoWrapper.css('width', '23%');
-    }
-    else {
-        videoWrapper.css('width', '80%');
-    }
-    setTimeout(function(){
-        videoWrapper.css('transition', 'width 0.5s, height 0.5s');
-    }, 500);
+    //resize and reposition video to its original state
+    videoWrapper.removeClass('video-wrapper--enlarged');
     
     //remove event listeners - the same elements are used to close 
     //photo or menu, so event listeners are removed to prevent conflicts (e.g.

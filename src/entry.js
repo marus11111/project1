@@ -5,7 +5,7 @@ require('./navigation/hamburgerMenu');
 require('./media/openCloseVideo');
 require('./media/openClosePhoto');
 require('./slider/slider');
-require('./canvas/circles');
+require('./canvas/canvasFunctions');
 
 require('./pics/sprite-blogs.jpg');
 require('./pics/sprite-engineers.png');

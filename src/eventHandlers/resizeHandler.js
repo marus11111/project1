@@ -1,15 +1,17 @@
-var circles = require('../canvas/circles');
-var drawCircles = circles.drawCircles;
-var drawInitialCircles = circles.drawInitialCircles;
-var passNewOptions = circles.getNewOptions;
+var canvasFunctions = require('../canvas/canvasFunctions');
+var drawCircles = canvasFunctions.drawCircles;
+var drawInitialCircles = canvasFunctions.drawInitialCircles;
+var passNewOptions = canvasFunctions.getNewOptions;
+var isCanvasDrawn = canvasFunctions.isCanvasDrawn;
 var CanvasOptions = require('../canvas/CanvasOptions').CanvasOptions;
 var minimizeVideo = require('../media/openCloseVideo').minimizeVideo;
 var minimizePhoto = require('../media/openClosePhoto').minimizePhoto;
 var DOM = require('../helpers/getDOMElements');
 var menu = DOM.menu;
 var darkBg = DOM.darkBg;
+var closeMenu = require('../navigation/hamburgerMenu').closeMenu;
 
-//will store timeout for debouncing purposes
+//will store timeout for debouncing
 var timeout; 
 
 //will store new canvas options
@@ -18,7 +20,7 @@ var resizeCanvasOptions;
 function resizeHandler(){
     var windowWidth = window.innerWidth;
     
-    //resize hamburger menu
+    //hide/show hamburger menu
     darkBg.css('display', 'none');
     if (windowWidth >= 1070){
         menu.css({
@@ -33,7 +35,7 @@ function resizeHandler(){
         });
     }
     
-    //close videos and photos so that they resize properly
+    //minimize videos and photos
     for (i=0; i<2; i++) {
         minimizeVideo(i, windowWidth);
     }
@@ -41,24 +43,19 @@ function resizeHandler(){
         minimizePhoto(i, windowWidth);
     }
     
-    clearTimeout(timeout);
-    
-    //Check if there is still scroll event attached to ducument.
-    //If scroll is attached, then canvas wasn't yet scrolled to and 
-    //drawn - only options and initial 0% circles will be updated.
-    //If scroll isn't attached anymore, it means canvas was already drawn 
-    //and full redraw will be performed.
-    var documentEvents = $._data($(document)[0], 'events');
-    if(documentEvents){
-        if(documentEvents.scroll){
-            timeout = setTimeout(function(){
-                resizeCanvasOptions = new CanvasOptions(windowWidth);
-                drawInitialCircles(resizeCanvasOptions);
-                passNewOptions(resizeCanvasOptions);
-            }, 500);
-        }
+    //Check if canvas has been scrolled to and 
+    //drawn - if that's the case, only options and initial 0% circles  
+    //will be updated, else full redraw will be performed.
+    clearTimeout(timeout); //debounce
+    var canvasDrawn = isCanvasDrawn();
+    if(!canvasDrawn) {
+        timeout = setTimeout(function(){
+            resizeCanvasOptions = new CanvasOptions(windowWidth);
+            drawInitialCircles(resizeCanvasOptions);
+            passNewOptions(resizeCanvasOptions);
+        }, 500);
     }
-    else{
+    else {
         timeout = setTimeout(function(){
             drawCircles(new CanvasOptions(windowWidth)); 
         }, 500);

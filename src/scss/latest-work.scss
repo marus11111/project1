@@ -1,12 +1,12 @@
 .latest-work { 
+    color: white;
+    margin-top: 2em;
+    padding-bottom: 1em;
     background: {
         image: url(../pics/latest-work-bg.jpg);
         size: cover;
         position: center;
     }
-    color: white;
-    margin-top: 2em;
-    padding-bottom: 1em;
 }
 
 .section-heading--latest {
@@ -21,19 +21,19 @@
 }
 
 .single-image {
-    position: relative;
-    width: 80%;
-    @media screen and (min-width: 950px) {
-        width: 25%;
-    }
     max-width: 500px;
-    display: inline-block;
-    margin: 1em;
-    transition: width 0.5s, height 0.5s;
+    
+    @include widthGreaterEqual (950px) {
+        &:not(&--enlarged) {
+            width: 25%;
+        }
+    }
+    
     img {
         width: 100%;
         height: auto;
     }
+    
     &__hover {
         position: absolute;
         top: 0;
@@ -43,18 +43,23 @@
         opacity: 0;
         cursor: pointer;
         transition: opacity 1s;
+        
         &:hover{
             opacity: 1;
         }
+        
         p {
             position: absolute;
-            width: 100%;
             top: 50%;
             transform: translateY(-50%);
+            width: 100%;
             font-size: 1em;
-            @media screen and (min-width: 650px) and (min-height: 650px){
+            
+            @include fontSizeChange {
                 font-size: 12px;
             }
         }
     }
+    
+    @include media (photo);
 }

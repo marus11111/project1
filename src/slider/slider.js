@@ -14,7 +14,7 @@ function slider(intervalTime){
         
         //return if user wants to navigate to the current slide or 
         //slide is currently changing (if flag is set to true)
-        if(current==next || ongoingTransition){
+        if(current === next || ongoingTransition){
             return;
         }
         
@@ -32,8 +32,8 @@ function slider(intervalTime){
         });
         
         //changes 'active' circle
-        circles.eq(current).css('background-color', 'rgba(255,114,0,0)');
-        circles.eq(next).css('background-color', 'rgba(255,114,0,1)');
+        circles.eq(current).removeClass('slider__single-circle--active');
+        circles.eq(next).addClass('slider__single-circle--active');
         
         setTimeout(function(){
             
@@ -54,7 +54,7 @@ function slider(intervalTime){
     
     //callback for setInterval that will be changing slides automatically 
     function intervalCallback(){
-        if (currentSlide==4){
+        if (currentSlide === 4){
             changeSlides(currentSlide, 0);
         }
         else {

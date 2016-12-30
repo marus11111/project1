@@ -1,6 +1,5 @@
 var DOM = require('../helpers/getDOMElements');
 var hamburgerButton = DOM.hamburgerButton;
-var hamburgerLines = DOM.hamburgerLines;
 var menu = DOM.menu;
 var menuItems = DOM.menuItems;
 var darkBg = DOM.darkBg;
@@ -17,16 +16,8 @@ function openMenu() {
     menu.css('display', 'block').fadeTo(0.5, 1);
     darkBg.css('display', 'block').fadeTo(0.5, 1);
     
-    //transform lines on button to create X
-    hamburgerLines.eq(0).css({
-        'top': '50%',
-        'transform': 'translate(-50%, -50%) rotate(-45deg)'
-    });
-    hamburgerLines.eq(1).fadeTo(0.5, 0);
-    hamburgerLines.eq(2).css({
-        'top': '50%',
-        'transform': 'translate(-50%, -50%) rotate(45deg)'
-    });
+    //modify button to display x
+    hamburgerButton.addClass('hamburger--active');
     
     //close menu by clicking on background
     darkBg.click(closeMenu);
@@ -45,16 +36,8 @@ function closeMenu() {
         darkBg.css('display', 'none');
     }, 500);
     
-    //transform lines on button so that they form hamburger again
-    hamburgerLines.eq(0).css({
-        'top': '22%',
-        'transform': 'translate(-50%,-50%)'
-    });
-    hamburgerLines.eq(1).fadeTo(0.5, 1);
-    hamburgerLines.eq(2).css({
-        'top': '78%',
-        'transform': 'translate(-50%,-50%)'
-    });
+    //modify button so that it's hamburger again
+    hamburgerButton.removeClass('hamburger--active');
     
     //remove event listener - the same elements are used to close 
     //video or photo, so event listeners are removed to prevent conflicts (e.g.
@@ -64,12 +47,7 @@ function closeMenu() {
 
 //event handler for hamburger button
 function hamburgerClick() {
-    if(menuOpen) {
-        closeMenu();
-    }
-    else {
-        openMenu();
-    }
+    menuOpen ? closeMenu() : openMenu();
 }
 
 hamburgerButton.click(hamburgerClick);
@@ -80,3 +58,5 @@ menuItems.click(function(){
         closeMenu();
     }
 });
+
+exports.closeMenu = closeMenu;

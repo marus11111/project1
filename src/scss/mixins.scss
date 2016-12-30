@@ -1,0 +1,84 @@
+//media queries
+
+$menuBreakpoint: 1070px;
+$fontSizeBreakpoint: 650px;
+
+//When menu is fully, permanently displayed (there is no hamburger button)
+@mixin menuFull {
+    @media screen and (min-width: #{$menuBreakpoint}) {
+        @content;
+    }
+}
+
+//When menu is not permanently displayed (there is hamburger button)
+@mixin menuHamburger {
+    @media screen and (max-width: #{$menuBreakpoint - 1px}) {
+        @content;
+    }
+}
+
+//In most cases font size will be set exactly to the one from psd file
+//on screens wider and higher than breakpoint in this mixin.
+@mixin fontSizeChange {
+    @media screen and (min-width: #{$fontSizeBreakpoint}) and (min-height: #{$fontSizeBreakpoint}){
+        @content;
+    }
+}
+
+@mixin widthGreaterEqual ($customBreakpoint) {
+    @media screen and (min-width: #{$customBreakpoint}) {
+        @content;
+    } 
+}
+
+@mixin heightGreaterEqual ($customBreakpoint) {
+    @media screen and (min-height: #{$customBreakpoint}) {
+        @content;
+    } 
+}
+
+@mixin landscape {
+    @media screen and (orientation: landscape) {
+        @content;
+    }
+}
+
+
+
+
+//photos and videos
+
+@mixin media ($type) {
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    margin: 1em;
+    transition: width 0.5s, height 0.5s;
+    
+    &--enlarged {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        width: 100%;
+        max-height: 90%;
+        margin: 0;
+        
+        @include landscape {
+            height: 100%;
+            max-width: 90%;
+        }
+        
+        @if $type == photo {
+            .single-image__hover {
+                display: none;
+            } 
+        }
+        @else if $type == video {
+            .video__button {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,62 +1,66 @@
 .menu {
-    position:fixed;
     display: none;
-    opacity: 0;
-    top: 25%;
+    position:fixed;
     right: 10%;
+    top: 25%;
+    z-index: 1;
     width: 80%;
     height: 68%;
-    @media screen and (min-width: 1070px){
-        position: absolute;
+    opacity: 0;
+    transition: right 1s, width 1s, height 1s, background-color 1s, opacity 0.5s;
+    
+    @include menuFull {
         display: block;
+        position: absolute;
         opacity: 1;
-        top: 9.7%;
         right: 10%;
+        top: 9.7%;
         width: 31em;
         height: 1.9em;
     }
-    transition: right 1s, width 1s, height 1s, background-color 1s, opacity 0.5s;
-    z-index: 1;
     
     ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 100%;
         height: 100%;
         background-color: rgba(140, 140, 140, 0.8);
-        @media screen and (min-width: 1070px){
-            background-color: rgba(140, 140, 140, 0.6);
-        }
         box-shadow: inset 0 0 0 2px rgba(175, 176, 170, 0.5); // imitates border, but lets li elements overlap this imitated "inner" border
         border-radius: 11px;
         transition: inherit;
+        
+        @include menuFull {
+            flex-direction: row;
+            background-color: rgba(140, 140, 140, 0.6);
+        }
     }
     
     &__item {
         display: inline-block;
         position: relative;
+        width: 100%;
         box-sizing: border-box;
         font-weight: 400;
-        @media screen and (max-width: 1069px){
-            top: 50%;
-            transform: translateY(-5em);  
-        }
-        font-size: 1.5em;
         line-height: 2em;
-        width: 100%;
-        @media screen and (min-width: 1070px), screen and (orientation: landscape) and (max-height: 375px) {
-            font-size: 1em;
-        }
-        @media screen and (min-width: 1070px) {
-            height: 100%;
-            width: auto;
-        }
+        color: black;
         padding: 0 1em;
         cursor: pointer;
-        color: black;
         border: {
             radius: 10px;
             style: solid;
             width: 1px;
             color:rgba(140, 140, 140, 0);
+        }
+        
+        @include heightGreaterEqual (375px) {
+            @include menuHamburger {
+                font-size: 1.5em;
+            }    
+        } 
+        @include menuFull {
+            height: 100%;
+            width: auto;
         }
 
         &:hover {
@@ -66,17 +70,19 @@
     }
     
     &--fixed {
-        @media screen and (min-width: 1070px){
+        @include menuFull {
             top: -1px;
             right: 0;
             width: 100%;
             position: fixed;
+            
             ul {
                 box-shadow: none;
                 border-bottom: 2px solid rgba(175, 176, 170, 0.5);
                 border-radius: 0;  
                 background-color: rgba(140, 140, 140, 0.8);
             }
+            
             li {
                 top: 1px;
             }
@@ -85,15 +91,13 @@
 }
 
 .hamburger {
-    @media screen and (min-width: 1070px){
-        display:none
-    }
     position: fixed;
-    box-sizing: border-box;
-    top: 5%;
     right: 5%;
+    top: 5%;
+    z-index: 1;
     width: 50px;
     height: 50px;
+    box-sizing: border-box;
     border: 2px solid rgba(175, 176, 170, 0.5);
     border-radius: 11px;
     background-color: rgba(140, 140, 140, 0.6);
@@ -101,25 +105,49 @@
          background-color: rgba(140, 140, 140, 0.8);
     }
     cursor: pointer;
-    z-index: 1;
+    
+    @include menuFull {
+        display:none
+    }
     
     &__line {
-        box-sizing: border-box;
         position: absolute;
-        width: 70%;
         left: 50%;
         transform: translate(-50%,-50%);
+        width: 70%;
+        box-sizing: border-box;
         border: 2px solid rgba(175, 176, 170, 0.5);;
         border-radius: 2px;
-        transition: top 0.5s, transform 0.5s;
+        transition: top 0.5s, transform 0.5s, opacity 0.5s;
+        
         &--top{
-            top:22%;
+            top: 27%;
         }
+        
         &--middle {
             top: 50%;
         }
+        
         &--bottom {
-            top: 78%;
+            top: 73%;
+        }
+    }
+    
+    &--active {
+        .hamburger__line {
+            &--top{
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            &--middle {
+                opacity: 0;
+            }
+
+            &--bottom {
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }  
         }
     }
 }
