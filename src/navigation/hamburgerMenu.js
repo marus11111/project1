@@ -58,5 +58,3 @@ menuItems.click(function(){
         closeMenu();
     }
 });
-
-exports.closeMenu = closeMenu;

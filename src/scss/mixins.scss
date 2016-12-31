@@ -43,9 +43,6 @@ $fontSizeBreakpoint: 650px;
     }
 }
 
-
-
-
 //photos and videos
 
 @mixin media ($type) {
@@ -56,6 +53,8 @@ $fontSizeBreakpoint: 650px;
     transition: width 0.5s, height 0.5s;
     
     &--enlarged {
+        display: flex;
+        align-items: center;
         position: fixed;
         left: 50%;
         top: 50%;
@@ -63,11 +62,12 @@ $fontSizeBreakpoint: 650px;
         z-index: 1;
         width: 100%;
         max-height: 90%;
+        max-width: none;
         margin: 0;
         
         @include landscape {
-            height: 100%;
-            max-width: 90%;
+            width: 90%;
+            height: auto;
         }
         
         @if $type == photo {
@@ -81,4 +81,10 @@ $fontSizeBreakpoint: 650px;
             }
         }
     }
+}
+
+//show elements on scroll
+
+@mixin show ($enterAnimation) {
+    animation: show 1s, #{$enterAnimation} 1s;
 }

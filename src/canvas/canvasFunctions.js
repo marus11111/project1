@@ -32,8 +32,8 @@ function drawThinCircle(x, y, radius, percent, description, descriptionY) {
     ctx.fillText(percent+'%', x+0.05*radius, y+0.11*radius, 2*radius);
     
     ctx.textAlign = 'center';
-    ctx.font = 'bold 1em Roboto';
     ctx.fillStyle = 'black';
+    ctx.font = 'bold 1em Roboto';
     ctx.fillText(description, x, y+descriptionY, 3*radius);
 }
 
@@ -94,22 +94,6 @@ function drawCircles(options){
 }
 
 
-//Draws circles after scrolling to canvas.
-//canvasDrawn variable and isCanvasDrawn function are there 
-//to inform resize handler whether it should just update canvas 
-//options and redraw initial 0% circles or redraw full canvas
-var canvasDrawn = false;
-function isCanvasDrawn() {
-    return canvasDrawn;
-}
-function drawCirclesOnScroll(options){
-    if((canvas.getBoundingClientRect().bottom - window.innerHeight) < 0){
-        drawCircles(options);
-        canvasDrawn = true;
-        $(document).off('scroll');
-    }
-}
-
 //draw initial 0% circles
 var initialOptions = new CanvasOptions(window.innerWidth);
 drawInitialCircles(initialOptions);
@@ -120,10 +104,26 @@ function getNewOptions(options) {
     newOptions = options;
 }
 
-$(document).scroll(function(){
+//Draws circles after scrolling to canvas.
+//canvasDrawn variable and isCanvasDrawn function are there 
+//to inform resize handler whether it should just update canvas 
+//options and redraw initial 0% circles or redraw full canvas
+var canvasDrawn = false;
+function isCanvasDrawn() {
+    return canvasDrawn;
+}
+
+function drawCirclesOnScroll(){
     var options = newOptions || initialOptions;
-    drawCirclesOnScroll(options);
-});
+    if((canvas.getBoundingClientRect().top + 0.2*canvas.clientHeight - window.innerHeight) < 0){
+        drawCircles(options);
+        canvasDrawn = true;
+        $(window).off('scroll', drawCirclesOnScroll);
+    }
+}
+
+$(window).scroll(drawCirclesOnScroll);
+$(document).on('load', drawCirclesOnScroll);
 
 exports.drawCircles = drawCircles;
 exports.drawInitialCircles = drawInitialCircles;

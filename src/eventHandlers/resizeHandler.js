@@ -9,7 +9,6 @@ var minimizePhoto = require('../media/openClosePhoto').minimizePhoto;
 var DOM = require('../helpers/getDOMElements');
 var menu = DOM.menu;
 var darkBg = DOM.darkBg;
-var closeMenu = require('../navigation/hamburgerMenu').closeMenu;
 
 //will store timeout for debouncing
 var timeout; 

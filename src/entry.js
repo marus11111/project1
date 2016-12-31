@@ -1,5 +1,7 @@
 require('./scss/entry.scss');
-require('./eventHandlers/scrollHandler');
+require('./eventHandlers/stickyMenu');
+require('./eventHandlers/animations');
+require('./eventHandlers/smoothScroll');
 require('./eventHandlers/resizeHandler');
 require('./navigation/hamburgerMenu');
 require('./media/openCloseVideo');

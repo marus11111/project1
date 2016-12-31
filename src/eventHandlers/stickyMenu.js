@@ -2,7 +2,7 @@ var menu = require('../helpers/getDOMElements').menu;
 var menuTop = 0.097 * window.innerHeight;
 
 //Sticky menu on scroll
-function scrollHandler(){
+function stickyMenu(){
     var scroll = window.scrollY || window.pageYOffset;
     if(scroll>=menuTop && !menu.hasClass('menu--fixed')){
         menu.addClass('menu--fixed'); 
@@ -12,4 +12,4 @@ function scrollHandler(){
     }
 }
 
-$(window).scroll(scrollHandler);
+$(window).scroll(stickyMenu);

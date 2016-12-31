@@ -1,5 +1,6 @@
 var sliderSlides = $('.js_sel-slides');
 var sliderCircles = $('.js_sel-slider-circles');
+var scrollAnim = $('.js-sel_scroll-anim');
 var menu = $('#menu');
 var menuItems = $('.js_sel-item');
 var darkBg = $('#dark-bg');
@@ -12,6 +13,7 @@ var canvas = document.getElementById('canvas'); //canvas functions dont work on 
 
 exports.sliderSlides = sliderSlides;
 exports.sliderCircles = sliderCircles;
+exports.scrollAnim = scrollAnim;
 exports.menu = menu;
 exports.menuItems = menuItems;
 exports.darkBg = darkBg;

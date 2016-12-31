@@ -16,7 +16,6 @@ function enlargeVideo(videoIndex) {
     var videoWrapper = button.parent();
     var video = button.prev();
     var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
     
     //turn controls on
     video.attr('controls', true);

@@ -14,7 +14,6 @@ function enlargePhoto(photoIndex) {
     var hover = imageHover.eq(photoIndex);
     var photoWrapper = hover.parent();
     var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
     
     //hide menu and show dark background
     hideMenu(windowWidth);

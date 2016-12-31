@@ -1,0 +1,76 @@
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slide-from-depth {
+    0% {
+        transform: perspective(200px) translate3d(0,0,-100px);
+    }
+    100% {
+        transform: perspective(200px) translate3d(0,0,0);
+    } 
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(200px) rotate3d(90, 90, 0, 40deg);
+    }
+    100% {
+        transform: perspective(200px) rotate3d(0,0,0,0);
+    }
+}
+
+//If keyframes is supported, initially hide elements,
+//that will be revealed when user scrolls to them
+.cssanimations .hide{
+    opacity: 0;
+}
+
+.scroll-anim {
+    &.video-wrapper {
+        @include show (slide-from-depth);
+    }
+    &.featured-snippet {
+        &:nth-last-child(2) {
+            @include show (slide-in-left);
+        }
+        &:nth-last-child(1) {
+            @include show (slide-in-right);
+        }
+    }
+    &.images-row {
+        &:nth-last-child(3) {
+            @include show (slide-in-left);
+        }
+        &:nth-last-child(2) {
+            @include show (slide-from-depth);
+        }
+        &:nth-last-child(1) {
+            @include show (slide-in-right);
+        }
+    }
+    &.engineer {
+        @include show (rotate);
+    }
+    &.single-blog {
+        @include show (slide-from-depth);
+    }
+}
+
