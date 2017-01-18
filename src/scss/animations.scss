@@ -1,4 +1,19 @@
-@keyframes show {
+@keyframes show-hide {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
     0% {
         opacity: 0;
     }
@@ -39,38 +54,45 @@
 
 //If keyframes is supported, initially hide elements,
 //that will be revealed when user scrolls to them
-.cssanimations .hide{
+.cssanimations .initial-hide{
     opacity: 0;
 }
 
 .scroll-anim {
     &.video-wrapper {
-        @include show (slide-from-depth);
+        @include enter (slide-from-depth);
     }
     &.featured-snippet {
         &:nth-last-child(2) {
-            @include show (slide-in-left);
+            @include enter (slide-in-left);
         }
         &:nth-last-child(1) {
-            @include show (slide-in-right);
+            @include enter (slide-in-right);
         }
     }
     &.images-row {
         &:nth-last-child(3) {
-            @include show (slide-in-left);
+            @include enter (slide-in-left);
         }
         &:nth-last-child(2) {
-            @include show (slide-from-depth);
+            @include enter (slide-from-depth);
         }
         &:nth-last-child(1) {
-            @include show (slide-in-right);
+            @include enter (slide-in-right);
         }
     }
     &.engineer {
-        @include show (rotate);
+        @include enter (rotate);
     }
     &.single-blog {
-        @include show (slide-from-depth);
+        @include enter (slide-from-depth);
     }
 }
 
+.show {
+    animation: show-hide 0.5s forwards;
+}
+
+.hide {
+    animation: show-hide 0.5s reverse forwards;
+}

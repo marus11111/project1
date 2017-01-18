@@ -16,7 +16,7 @@ function animations() {
     //css class with animation
     if (windowBottom - breakpoint > 0 && !scrollAnim.eq(index).hasClass('scroll-anim')) { 
         scrollAnim.eq(index)
-            .removeClass('hide')
+            .removeClass('initial-hide')
             .addClass('scroll-anim');
         
         //If index points at the last element, disable animations event handler,

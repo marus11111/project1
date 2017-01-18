@@ -2,13 +2,12 @@ var DOM = require('../helpers/getDOMElements');
 var videoButtons = DOM.videoButtons;
 var darkBg = DOM.darkBg;
 var closePopUp = DOM.closePopUp;
-var hideShowMenu = require('./popUp-hideShowMenu');
-var showMenu = hideShowMenu.popUpShowMenu;
-var hideMenu = hideShowMenu.popUpHideMenu;
-var hideShowDark = require('./popUp-hideShowDarkBg');
-var showDark = hideShowDark.popUpShowDark;
-var hideDark = hideShowDark.popUpHideDark;
-
+var menu = DOM.menu;
+var hamburgerButton = DOM.hamburgerButton;
+var showHide = require('../helpers/showHide');
+var show = showHide.show;
+var hide = showHide.hide;
+var menuBreakpoint = require('../navigation/hamburgerMenu').menuBreakpoint;
 
 //enlarges video after clicking on 'play' button
 function enlargeVideo(videoIndex) {
@@ -21,8 +20,9 @@ function enlargeVideo(videoIndex) {
     video.attr('controls', true);
     
     //hide menu and show dark background
-    hideMenu(windowWidth);
-    showDark();
+    (windowWidth >= menuBreakpoint) ? hide(menu) : hide(hamburgerButton);
+    show(closePopUp);
+    show(darkBg);
     
     //resize and reposition video
     videoWrapper.addClass('video-wrapper--enlarged');
@@ -46,8 +46,15 @@ function minimizeVideo(videoIndex, windowWidth){
     video.attr('controls', false);
     
     //show menu and hide dark background
-    showMenu(windowWidth);
-    hideDark();
+    if (windowWidth >= menuBreakpoint){
+        show(menu);
+        hide(hamburgerButton);
+    }
+    else {
+        show(hamburgerButton);
+    }
+    hide(closePopUp);
+    hide(darkBg);;
     
     //resize and reposition video to its original state
     videoWrapper.removeClass('video-wrapper--enlarged');

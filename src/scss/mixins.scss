@@ -85,6 +85,6 @@ $fontSizeBreakpoint: 650px;
 
 //show elements on scroll
 
-@mixin show ($enterAnimation) {
-    animation: show 1s, #{$enterAnimation} 1s;
+@mixin enter ($enterAnimation) {
+    animation: fade-in 1s, #{$enterAnimation} 1s;
 }

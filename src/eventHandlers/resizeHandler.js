@@ -9,6 +9,10 @@ var minimizePhoto = require('../media/openClosePhoto').minimizePhoto;
 var DOM = require('../helpers/getDOMElements');
 var menu = DOM.menu;
 var darkBg = DOM.darkBg;
+var showHide = require('../helpers/showHide');
+var show = showHide.show;
+var hide = showHide.hide;
+var menuBreakpoint = require('../navigation/hamburgerMenu').menuBreakpoint;
 
 //will store timeout for debouncing
 var timeout; 
@@ -20,19 +24,8 @@ function resizeHandler(){
     var windowWidth = window.innerWidth;
     
     //hide/show hamburger menu
-    darkBg.css('display', 'none');
-    if (windowWidth >= 1070){
-        menu.css({
-            'display': 'block',
-            'opacity': 1
-        });
-    }
-    else {
-        menu.css({
-            'display': 'none',
-            'opacity': 0
-        });
-    }
+    hide(darkBg);
+    (windowWidth >= menuBreakpoint) ? show(menu) : hide(menu);
     
     //minimize videos and photos
     for (i=0; i<2; i++) {

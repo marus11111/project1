@@ -3,9 +3,13 @@ var hamburgerButton = DOM.hamburgerButton;
 var menu = DOM.menu;
 var menuItems = DOM.menuItems;
 var darkBg = DOM.darkBg;
+var showHide = require('../helpers/showHide');
+var show = showHide.show;
+var hide = showHide.hide;
 
 //variable to be used as flag that informes whether to close or open menu after clicking on hamburger button
 var menuOpen = false;
+var menuBreakpoint = 1070;
 
 function openMenu() {
     
@@ -13,8 +17,8 @@ function openMenu() {
     menuOpen = true;
     
     //show menu and dark background
-    menu.css('display', 'block').fadeTo(0.5, 1);
-    darkBg.css('display', 'block').fadeTo(0.5, 1);
+    show(menu);
+    show(darkBg);
     
     //modify button to display x
     hamburgerButton.addClass('hamburger--active');
@@ -29,13 +33,9 @@ function closeMenu() {
     menuOpen = false;
     
     //hide menu and dark background
-    menu.fadeTo(0.5, 0);
-    darkBg.fadeTo(0.5, 0);
-    setTimeout(function () {
-        menu.css('display', 'none');
-        darkBg.css('display', 'none');
-    }, 500);
-    
+    hide(menu);
+    hide(darkBg);
+        
     //modify button so that it's hamburger again
     hamburgerButton.removeClass('hamburger--active');
     
@@ -54,7 +54,9 @@ hamburgerButton.click(hamburgerClick);
 
 //close menu when menu item is clicked
 menuItems.click(function(){
-    if (window.innerWidth < 1070) {
+    if (window.innerWidth < menuBreakpoint) {
         closeMenu();
     }
 });
+
+exports.menuBreakpoint = menuBreakpoint;
