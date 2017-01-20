@@ -1,62 +1,65 @@
 .blogs {
-    color: white; //heading only
-    margin-top: 3em;
-    overflow: hidden; 
-    background: {
-        image: url(../pics/blog-bg.jpg);
-        size: cover;
-        position: center;
-    } 
+  color: white; //heading only
+  margin-top: 3em;
+  overflow: hidden;
+  background: {
+    image: url(../pics/blog-bg.jpg);
+    size: cover;
+    position: center;
+  }
 }
 
 .single-blog {
-    display: inline-block;
-    vertical-align: top;
-    width: 70%;
-    max-width: 400px;
-    font-size: 0.9em;
-    text-align: left;
-    color: rgb(177,177,177);
-    margin: 0.5em 1.5em 2.5em 1.5em;
-    
-    @include widthGreaterEqual (900px) {
-        width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  max-width: 400px;
+  font-size: 0.9em;
+  text-align: left;
+  color: rgb(177, 177, 177);
+  
+  margin: 0.5em 1.5em 2.5em 1.5em;
+  @include widthGreaterEqual (900px) {
+    width: 20%;
+  }
+  
+  //wrapper and keeping it's ratio constant are necessary to use sprite img
+  &__image-wrap {
+    width: 100%;
+    height: 0;
+  }
+  
+  &__img-ratio {
+    position: relative;
+    padding-bottom: 60.0682594%;
+    overflow: hidden;
+  }
+  
+  &__image {
+    position: absolute;
+    width: auto;
+    height: 101%; //making picture slightly bigger than wrapper was necessary to get rid of very thin 'border' from previous or next image on sprite, that was appearing on some resolutions
+    @for $i from 1 through 3 {
+      &--#{$i} {
+        left: -($i - 1)*101.5%;
+      }
     }
-    
-    //wrapper and keeping it's ratio constant are necessary to use sprite img
-    &__image-wrap {
-        width: 100%; 
-        height: 0;
-    }
-    &__img-ratio {
-        position: relative;
-        padding-bottom: 60.0682594%;
-        overflow: hidden;
-    }
-    &__image {
-        position: absolute;
-        width: auto;
-        height: 101%; //making picture slightly bigger than wrapper was necessary to get rid of very thin 'border' from previous or next image on sprite, that was appearing on some resolutions
-        
-        @for $i from 1 through 3 {
-            &--#{$i} {
-                left: -($i - 1)*101.5%;
-            }
-        }
-    }
-    
-    &__title {
-        color: rgb(255,114,0);
-        margin: 0.5em 0;
-        padding-top: 60.0682594%; //image-wrap has height 0 and without padding-top text is being overlapped by img-ratio's bottom padding
-    }
-    &__text {
-        margin-top: 1em;
-        font-size: 0.7em;
-        line-height: 1.6;
-    }
-    &__more {
-        color: inherit; //for some reason a element doesnt inherit color automatically
-        line-height: 2;
-    }
+  }
+  
+  &__title {
+    color: rgb(255, 114, 0);
+    margin: 0.5em 0;
+    padding-top: 60.0682594%; //image-wrap has height 0 and without padding-top text is being overlapped by img-ratio's bottom padding
+  }
+  
+  &__text {
+    margin-top: 1em;
+    font-size: 0.7em;
+    line-height: 1.6;
+  }
+  
+  &__more {
+    color: inherit; //for some reason a element doesnt inherit color automatically
+    line-height: 2;
+  }
 }

@@ -1,85 +1,85 @@
 .video {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4em;
+    height: 2em;
+    border-radius: 0.4em;
+    background-color: rgb(255, 114, 0);
+    cursor: pointer;
+    transition: opacity 0.5s;
     
-    &__button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 4em;
-        height: 2em;
-        border-radius: 0.4em;
-        background-color: rgb(255, 114, 0);
-        cursor: pointer;
-        transition: opacity 0.5s;
-        
-        &:hover {
-            background-color: rgb(255, 150, 0);
-        }
-        
-        &__arrow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-left: 0.69282em solid rgb(140, 80, 31);
-            border-top: 0.4em solid transparent;
-            border-bottom: 0.4em solid transparent;
-        }
+    &:hover {
+      background-color: rgb(255, 150, 0);
     }
+    
+    &__arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-left: 0.69282em solid rgb(140, 80, 31);
+      border-top: 0.4em solid transparent;
+      border-bottom: 0.4em solid transparent;
+    }
+  }
 }
 
 .video-wrapper {
-    height: auto;
-    
-    @include widthGreaterEqual (900px) {
-         &:not(&--enlarged) {
-            width: 23%;
-         }
+  height: auto;
+  
+  @include widthGreaterEqual (900px) {
+    &:not(&--enlarged) {
+      width: 23%;
     }
-    
-    @include media (video);
+  }
+  
+  @include media (video);
 }
 
 .featured-snippet {
-    display: inline-block;
-    position: relative;
-    width: 70%;
-    text-align: left;
-    margin: 1.5em 0.5em;
+  display: inline-block;
+  position: relative;
+  width: 70%;
+  text-align: left;
+  margin: 1.5em 0.5em;
+  
+  @include fontSizeChange {
+    width: 40%;
+  }
+  
+  &__title {
+    font-weight: 700;
     
     @include fontSizeChange {
-        width: 40%;
-    } 
+      font-size: 18px;
+    }
+  }
+  
+  &__body {
+    font: {
+      family: 'Roboto Condensed', sans-serif;
+      size: 0.9em;
+    }
+    line-height: 1.5em;
+    margin-top: 0.5em;
     
-    &__title {
-        font-weight: 700;
-        
-        @include fontSizeChange {
-            font-size: 18px;
-        } 
+    @include fontSizeChange {
+      font-size: 15px;
+      line-height: 24px;
     }
     
-    &__body {
-        font: {
-            family: 'Roboto Condensed', sans-serif;
-            size: 0.9em;
-        }
-        line-height: 1.5em;
-        margin-top: 0.5em;
-        
-        @include fontSizeChange {
-            font-size: 15px;
-            line-height: 24px;
-        } 
-        
-        &--small {
-            font-size: 0.8em;
-            
-            @include fontSizeChange {
-                font-size: 13px;
-            }
-        }
+    &--small {
+      font-size: 0.8em;
+      
+      @include fontSizeChange {
+        font-size: 13px;
+      }
     }
+  }
 }

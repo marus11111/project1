@@ -1,3 +1,4 @@
+//reset
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -84,61 +85,64 @@ input, textarea, button {
     text-transform: inherit;
 }
 
+////////end of reset
+
 textarea {
-    resize: none;
+  resize: none;
 }
 
 ::placeholder {
-    opacity: 1; //for firefox placeholder
+  opacity: 1; //for firefox placeholder
 }
+
 :focus::placeholder {
-    color:transparent;
+  color: transparent;
 }
 
 .section-heading {
-    font: {
-        weight: 400;
-    }
-    margin-top: 3em;
-    margin-bottom: 1em;
-    
-    @include fontSizeChange {
-        font-size: 30px;
-    } 
+  font: {
+    weight: 400;
+  }
+  margin-top: 3em;
+  margin-bottom: 1em;
+  
+  @include fontSizeChange {
+    font-size: 30px;
+  }
 }
 
 .no-uppercase {
-    text-transform: none;
+  text-transform: none;
 }
 
 .clearfix:after {
-    display: table;
-    clear: both;
-    content: '';
+  display: table;
+  clear: both;
+  content: '';
 }
 
 .pop-up {
-    &__dark-bg {
-        visibility: hidden;
-        position: fixed;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        background-color: rgba(0,0,0,0.8);
-        transition: opacity 0.5s;
-    }
-    
-    &__close {
-        visibility: hidden;
-        position: absolute;
-        right: 2%;
-        top: 2%;
-        width: 30px;
-        height: 30px;
-        border: none;
-        background: url($close);
-        background-size: contain;
-        cursor: pointer;
-    }
+  &__dark-bg {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.5s;
+  }
+  
+  &__close {
+    visibility: hidden;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: url($close);
+    background-size: contain;
+    cursor: pointer;
+  }
 }

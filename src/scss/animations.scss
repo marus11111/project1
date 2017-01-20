@@ -1,98 +1,98 @@
 @keyframes show-hide {
-    0% {
-        visibility: hidden;
-        opacity: 0;
-    }
-    1% {
-        visibility: visible;
-        opacity: 0;
-    }
-    100% {
-        visibility: visible;
-        opacity: 1;
-    }
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-in-left {
-    0% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes slide-in-right {
-    0% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes slide-from-depth {
-    0% {
-        transform: perspective(200px) translate3d(0,0,-100px);
-    }
-    100% {
-        transform: perspective(200px) translate3d(0,0,0);
-    } 
+  0% {
+    transform: perspective(200px) translate3d(0, 0, -100px);
+  }
+  100% {
+    transform: perspective(200px) translate3d(0, 0, 0);
+  }
 }
 
 @keyframes rotate {
-    0% {
-        transform: perspective(200px) rotate3d(90, 90, 0, 40deg);
-    }
-    100% {
-        transform: perspective(200px) rotate3d(0,0,0,0);
-    }
+  0% {
+    transform: perspective(200px) rotate3d(90, 90, 0, 40deg);
+  }
+  100% {
+    transform: perspective(200px) rotate3d(0, 0, 0, 0);
+  }
 }
 
 //If keyframes is supported, initially hide elements,
 //that will be revealed when user scrolls to them
-.cssanimations .initial-hide{
-    opacity: 0;
+.cssanimations .initial-hide {
+  opacity: 0;
 }
 
 .scroll-anim {
-    &.video-wrapper {
-        @include enter (slide-from-depth);
+  &.video-wrapper {
+    @include enter (slide-from-depth);
+  }
+  &.featured-snippet {
+    &:nth-last-child(2) {
+      @include enter (slide-in-left);
     }
-    &.featured-snippet {
-        &:nth-last-child(2) {
-            @include enter (slide-in-left);
-        }
-        &:nth-last-child(1) {
-            @include enter (slide-in-right);
-        }
+    &:nth-last-child(1) {
+      @include enter (slide-in-right);
     }
-    &.images-row {
-        &:nth-last-child(3) {
-            @include enter (slide-in-left);
-        }
-        &:nth-last-child(2) {
-            @include enter (slide-from-depth);
-        }
-        &:nth-last-child(1) {
-            @include enter (slide-in-right);
-        }
+  }
+  &.images-row {
+    &:nth-last-child(3) {
+      @include enter (slide-in-left);
     }
-    &.engineer {
-        @include enter (rotate);
+    &:nth-last-child(2) {
+      @include enter (slide-from-depth);
     }
-    &.single-blog {
-        @include enter (slide-from-depth);
+    &:nth-last-child(1) {
+      @include enter (slide-in-right);
     }
+  }
+  &.engineer {
+    @include enter (rotate);
+  }
+  &.single-blog {
+    @include enter (slide-from-depth);
+  }
 }
 
 .show {
-    animation: show-hide 0.5s forwards;
+  animation: show-hide 0.5s forwards;
 }
 
 .hide {
-    animation: show-hide 0.5s reverse forwards;
+  animation: show-hide 0.5s reverse forwards;
 }

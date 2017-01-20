@@ -1,90 +1,88 @@
 //media queries
-
 $menuBreakpoint: 1070px;
 $fontSizeBreakpoint: 650px;
-
 //When menu is fully, permanently displayed (there is no hamburger button)
 @mixin menuFull {
-    @media screen and (min-width: #{$menuBreakpoint}) {
-        @content;
-    }
+  @media screen and (min-width: #{$menuBreakpoint}) {
+    @content;
+  }
 }
 
 //When menu is not permanently displayed (there is hamburger button)
 @mixin menuHamburger {
-    @media screen and (max-width: #{$menuBreakpoint - 1px}) {
-        @content;
-    }
+  @media screen and (max-width: #{$menuBreakpoint - 1px}) {
+    @content;
+  }
 }
 
 //In most cases font size will be set exactly to the one from psd file
 //on screens wider and higher than breakpoint in this mixin.
 @mixin fontSizeChange {
-    @media screen and (min-width: #{$fontSizeBreakpoint}) and (min-height: #{$fontSizeBreakpoint}){
-        @content;
-    }
+  @media screen and (min-width: #{$fontSizeBreakpoint}) and (min-height: #{$fontSizeBreakpoint}) {
+    @content;
+  }
 }
 
 @mixin widthGreaterEqual ($customBreakpoint) {
-    @media screen and (min-width: #{$customBreakpoint}) {
-        @content;
-    } 
+  @media screen and (min-width: #{$customBreakpoint}) {
+    @content;
+  }
 }
 
 @mixin heightGreaterEqual ($customBreakpoint) {
-    @media screen and (min-height: #{$customBreakpoint}) {
-        @content;
-    } 
+  @media screen and (min-height: #{$customBreakpoint}) {
+    @content;
+  }
 }
 
 @mixin landscape {
-    @media screen and (orientation: landscape) {
-        @content;
-    }
+  @media screen and (orientation: landscape) {
+    @content;
+  }
 }
 
 //photos and videos
-
 @mixin media ($type) {
-    display: inline-block;
-    position: relative;
-    width: 80%;
-    margin: 1em;
-    transition: width 0.5s, height 0.5s;
+  display: inline-block;
+  position: relative;
+  width: 80%;
+  margin: 1em;
+  transition: width 0.5s, height 0.5s;
+  
+  &--enlarged {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100%;
+    max-height: 90%;
+    max-width: none;
+    margin: 0;
     
-    &--enlarged {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        width: 100%;
-        max-height: 90%;
-        max-width: none;
-        margin: 0;
-        
-        @include landscape {
-            width: 90%;
-            height: auto;
-        }
-        
-        @if $type == photo {
-            .single-image__hover {
-                display: none;
-            } 
-        }
-        @else if $type == video {
-            .video__button {
-                display: none;
-            }
-        }
+    @include landscape {
+      width: 90%;
+      height: auto;
     }
+    
+    @if $type==photo {
+      .single-image__hover {
+        display: none;
+      }
+    }
+    
+    @else if $type==video {
+      .video__button {
+        display: none;
+      }
+    }
+  }
 }
 
 //show elements on scroll
-
 @mixin enter ($enterAnimation) {
-    animation: fade-in 1s, #{$enterAnimation} 1s;
+  animation: fade-in 1s,
+  #{$enterAnimation} 1s;
 }

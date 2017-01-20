@@ -1,56 +1,57 @@
 .engineer {
-    display: inline-block;
-    position: relative;
-    width: 95%;
-    max-width: 430px;
-    min-height: 90px; //so that pictures' bottoms aren't cut
-    text-align: left;
-    margin: 0.5em 0;
+  display: inline-block;
+  position: relative;
+  width: 95%;
+  max-width: 430px;
+  min-height: 90px; //so that pictures' bottoms aren't cut
+  text-align: left;
+  margin: 0.5em 0;
+  
+  @include widthGreaterEqual (600px) {
+    width: 80%;
+    min-height: 127px;
+    margin: 0.5em 3em;
+  }
+  
+  //wrapper necessary to use sprite img
+  &__image-wrap {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translateY(-50%);
+    overflow: hidden;
     
-    @include widthGreaterEqual (600px){
-        width: 80%;
-        min-height: 127px;
-        margin: 0.5em 3em;
+    @include widthGreaterEqual (600px) {
+      width: 127px;
+      height: 127px;
     }
+  }
+  
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      position: absolute;
+      left: -($i - 1)*100%;
+      width: auto;
+      height: 100%;
+    }
+  }
+  
+  article {
+    padding-left: 118px;
     
-    //wrapper necessary to use sprite img
-    &__image-wrap {
-        position: absolute;
-        left:0;
-        top: 50%;
-        width: 90px;
-        height: 90px;
-        transform:translateY(-50%);
-        overflow: hidden;
-        
-        @include widthGreaterEqual (600px){
-            width: 127px;
-            height: 127px;
-        }
+    @include widthGreaterEqual (600px) {
+      padding-left: 160px;
     }
-    
-    @for $i from 1 through 6 {
-        &--#{$i} {
-            position: absolute;
-            left: -($i - 1)*100%;
-            width: auto;
-            height: 100%;
-        }
-    }
-    
-    article {
-        padding-left: 118px;
-        
-        @include widthGreaterEqual (600px){
-            padding-left: 160px;
-        }
-    }
-    
-    &__name {
-        margin-top: 0.7em;
-    }
-    &__text {
-        font-size: 0.6em; 
-        margin-top: 0.5em;
-    }
+  }
+  
+  &__name {
+    margin-top: 0.7em;
+  }
+  
+  &__text {
+    font-size: 0.6em;
+    margin-top: 0.5em;
+  }
 }

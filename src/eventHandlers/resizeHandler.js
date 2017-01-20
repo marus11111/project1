@@ -15,43 +15,42 @@ var hide = showHide.hide;
 var menuBreakpoint = require('../navigation/hamburgerMenu').menuBreakpoint;
 
 //will store timeout for debouncing
-var timeout; 
+var timeout;
 
 //will store new canvas options
 var resizeCanvasOptions;
 
-function resizeHandler(){
-    var windowWidth = window.innerWidth;
-    
-    //hide/show hamburger menu
-    hide(darkBg);
-    (windowWidth >= menuBreakpoint) ? show(menu) : hide(menu);
-    
-    //minimize videos and photos
-    for (i=0; i<2; i++) {
-        minimizeVideo(i, windowWidth);
-    }
-    for (i=0; i<8; i++) {
-        minimizePhoto(i, windowWidth);
-    }
-    
-    //Check if canvas has been scrolled to and 
-    //drawn - if that's the case, only options and initial 0% circles  
-    //will be updated, else full redraw will be performed.
-    clearTimeout(timeout); //debounce
-    var canvasDrawn = isCanvasDrawn();
-    if(!canvasDrawn) {
-        timeout = setTimeout(function(){
-            resizeCanvasOptions = new CanvasOptions(windowWidth);
-            drawInitialCircles(resizeCanvasOptions);
-            passNewOptions(resizeCanvasOptions);
-        }, 500);
-    }
-    else {
-        timeout = setTimeout(function(){
-            drawCircles(new CanvasOptions(windowWidth)); 
-        }, 500);
-    }  
+function resizeHandler() {
+  var windowWidth = window.innerWidth;
+
+  //hide/show hamburger menu
+  hide(darkBg);
+  (windowWidth >= menuBreakpoint) ? show(menu): hide(menu);
+
+  //minimize videos and photos
+  for (i = 0; i < 2; i++) {
+    minimizeVideo(i, windowWidth);
+  }
+  for (i = 0; i < 8; i++) {
+    minimizePhoto(i, windowWidth);
+  }
+
+  //Check if canvas has been scrolled to and 
+  //drawn - if that's the case, only options and initial 0% circles  
+  //will be updated, else full redraw will be performed.
+  clearTimeout(timeout); //debounce
+  var canvasDrawn = isCanvasDrawn();
+  if (!canvasDrawn) {
+    timeout = setTimeout(function () {
+      resizeCanvasOptions = new CanvasOptions(windowWidth);
+      drawInitialCircles(resizeCanvasOptions);
+      passNewOptions(resizeCanvasOptions);
+    }, 500);
+  } else {
+    timeout = setTimeout(function () {
+      drawCircles(new CanvasOptions(windowWidth));
+    }, 500);
+  }
 }
 
 $(window).resize(resizeHandler);
