@@ -29,7 +29,7 @@
     }
   }
   
-  img {
+  &__image {
     width: 100%;
     height: auto;
   }
@@ -48,7 +48,7 @@
       opacity: 1;
     }
     
-    p {
+    &__text {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

@@ -64,21 +64,21 @@
   &__body {
     font: {
       family: 'Roboto Condensed', sans-serif;
-      size: 0.9em;
+      size: 0.8em;
     }
     line-height: 1.5em;
     margin-top: 0.5em;
     
     @include fontSizeChange {
-      font-size: 15px;
+      font-size: 13px;
       line-height: 24px;
     }
     
-    &--small {
-      font-size: 0.8em;
+    &__more {
+      font-size: 0.9em;
       
       @include fontSizeChange {
-        font-size: 13px;
+        font-size: 15px;
       }
     }
   }

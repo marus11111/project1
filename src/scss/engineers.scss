@@ -38,20 +38,20 @@
     }
   }
   
-  article {
+  &__text {
     padding-left: 118px;
     
     @include widthGreaterEqual (600px) {
       padding-left: 160px;
     }
-  }
-  
-  &__name {
-    margin-top: 0.7em;
-  }
-  
-  &__text {
-    font-size: 0.6em;
-    margin-top: 0.5em;
+    
+    &__name {
+      margin-top: 0.7em;
+    }
+
+    &__body {
+      font-size: 0.6em;
+      margin-top: 0.5em;
+    }
   }
 }
