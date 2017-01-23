@@ -21,7 +21,7 @@ function enlargePhoto(photoIndex) {
   show(darkBg);
 
   //resize and position photo
-  photoWrapper.addClass('single-image--enlarged');
+  photoWrapper.addClass('image__wrapper--enlarged');
 
   //close photo by clicking on dark background or close button
   darkBg.click(function () {
@@ -48,7 +48,7 @@ function minimizePhoto(photoIndex, windowWidth) {
   hide(darkBg);
 
   //resize and position photo to its origina state
-  photoWrapper.removeClass('single-image--enlarged');
+  photoWrapper.removeClass('image__wrapper--enlarged');
 
   //remove event listeners - the same elements are used to close 
   //video or menu, so event listeners are removed to prevent conflicts (e.g.

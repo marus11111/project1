@@ -58,21 +58,18 @@ $fontSizeBreakpoint: 650px;
     transform: translate(-50%, -50%);
     z-index: 1;
     width: 100%;
-    max-height: 90%;
     max-width: none;
     margin: 0;
     
     @include landscape {
       width: 90%;
-      height: auto;
     }
     
     @if $type==photo {
-      .single-image__hover {
+      .image__hover-screen {
         display: none;
       }
     }
-    
     @else if $type==video {
       .video__button {
         display: none;

@@ -30,7 +30,7 @@
     
     @for $i from 1 through 5 {
       &--#{$i} {
-        background-image:url('../pics/slide#{$i}.jpg');
+        background-image:url('pics/slide#{$i}.jpg');
       }
     }
   }

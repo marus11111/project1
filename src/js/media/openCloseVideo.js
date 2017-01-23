@@ -25,7 +25,7 @@ function enlargeVideo(videoIndex) {
   show(darkBg);
 
   //resize and reposition video
-  videoWrapper.addClass('video-wrapper--enlarged');
+  videoWrapper.addClass('video__wrapper--enlarged');
 
   //close video by clicking on dark background or close button
   darkBg.click(function () {
@@ -56,7 +56,7 @@ function minimizeVideo(videoIndex, windowWidth) {
   hide(darkBg);;
 
   //resize and reposition video to its original state
-  videoWrapper.removeClass('video-wrapper--enlarged');
+  videoWrapper.removeClass('video__wrapper--enlarged');
 
   //remove event listeners - the same elements are used to close 
   //photo or menu, so event listeners are removed to prevent conflicts (e.g.

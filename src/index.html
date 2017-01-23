@@ -6,18 +6,23 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <meta http-equiv='content-type' content='text/html;charset=UTF-8'>
   <link href="https://fonts.googleapis.com/css?family=Dosis%7CRoboto+Condensed%7CRoboto:100,400,700" rel="stylesheet">
-  <link href='style.css' rel='stylesheet'>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  
+  <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicon/manifest.json">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
+  
+  <!--dark background for pop-ups and menu-->
   <div class='pop-up__dark-bg' id='dark-bg'>
     <button class='pop-up__close' id='close'></button></div>
+  
+  <!--page header-->
   <header class='masthead' id='home'>
     <nav id='hamburger-button' class='hamburger'>
       <div class='hamburger__line hamburger__line--top'></div>
@@ -59,13 +64,17 @@
       <button type='submit' class='search-box__button'></button>
     </form>
   </header>
+  
+  <!--about section-->
   <section id='about'>
     <h2 class='section-heading'>Our experience</h2>
     <canvas width='864' height='150' class='circles' id='canvas'></canvas>
   </section>
+  
+  <!--featured work section-->
   <section>
     <h2 class='section-heading'>Our some featured work</h2>
-    <div class='js-sel_scroll-anim video-wrapper initial-hide'>
+    <div class='js-sel_scroll-anim video__wrapper initial-hide'>
       <video poster='pics/slide1.jpg' class='video' width=263 height=157>
                     <source src='#' type='video/mp4'>
                     <source src='#' type='video/ogg'>
@@ -74,7 +83,7 @@
         <div class='video__button__arrow'></div>
       </div>
     </div>
-    <div class='js-sel_scroll-anim video-wrapper initial-hide'>
+    <div class='js-sel_scroll-anim video__wrapper initial-hide'>
       <video poster='pics/slide2.jpg' class='video' width=263 height=157>
                     <source src='#' type='video/mp4'>
                     <source src='#' type='video/ogg'>
@@ -83,7 +92,7 @@
         <div class='video__button__arrow'></div>
       </div>
     </div>
-    <div class='js-sel_scroll-anim video-wrapper initial-hide'>
+    <div class='js-sel_scroll-anim video__wrapper initial-hide'>
       <video poster='pics/slide3.jpg' class='video' width=263 height=157>
                     <source src='#' type='video/mp4'>
                     <source src='#' type='video/ogg'>
@@ -104,69 +113,73 @@
       <a href='#' class='featured-snippet__body__more'>Read more.....</a>
     </article>
   </section>
+  
+  <!--latest work section-->
   <section class='latest-work'>
     <h2 class='section-heading section-heading--latest'>Our latest work gallery</h2>
     <div class='js-sel_scroll-anim images-row initial-hide'>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide1.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide1.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide2.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide2.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide3.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
-        </div>
-      </div>
-    </div>
-    <div class='js-sel_scroll-anim images-row initial-hide'>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide4.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
-        </div>
-      </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide5.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
-        </div>
-      </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide1.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide3.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
     </div>
     <div class='js-sel_scroll-anim images-row initial-hide'>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide2.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide4.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide3.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide5.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
-      <div class='single-image'>
-        <img class='single-image__image' src='pics/slide4.jpg' alt='our work' width=263 height=146>
-        <div class='js_sel-img-hover single-image__hover'>
-          <p class='single-image__hover__text no-uppercase'>Click to full view</p>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide1.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
+        </div>
+      </div>
+    </div>
+    <div class='js-sel_scroll-anim images-row initial-hide'>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide2.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
+        </div>
+      </div>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide3.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
+        </div>
+      </div>
+      <div class='image__wrapper'>
+        <img class='image' src='pics/slide4.jpg' alt='our work' width=263 height=146>
+        <div class='js_sel-img-hover image__hover-screen'>
+          <p class='image__hover-screen__text no-uppercase'>Click to full view</p>
         </div>
       </div>
     </div>
   </section>
+  
+  <!--team/engineers section-->
   <section id='team'>
     <h2 class='section-heading'>Our engineers</h2>
     <div class='js-sel_scroll-anim engineer initial-hide'>
@@ -224,6 +237,8 @@
       </article>
     </div>
   </section>
+  
+  <!--blogs section-->
   <section class='blogs' id='blogs'>
     <h2 class='section-heading'>BLOGS</h2>
     <div class='js-sel_scroll-anim single-blog initial-hide'>
@@ -263,6 +278,8 @@
       </article>
     </div>
   </section>
+  
+  <!--contact and subscribe forms section-->
   <section class='forms' id='contact'>
     <form class='forms__form forms__subscribe'>
       <h4 class='forms__form__heading'>Subscribe</h4><br>
@@ -294,6 +311,8 @@
       </li>
     </ul>
   </section>
+  
+  <!--footer-->
   <footer class='footer clearfix'>
     <ul class='footer__outer-ul'>
       <li class='footer__outer-li'>Phone
@@ -317,10 +336,9 @@
     </ul>
     <p class='footer__copy no-uppercase'>Copyright &copy; 2016 A.h Asif. All Right Reserved</p>
   </footer>
+  
   <script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>
   <script src='https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js'></script>
-  <script src='modernizr-custom.js'></script>
-  <script src='script.js'></script>
 </body>
 
 </html>

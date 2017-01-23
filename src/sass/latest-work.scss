@@ -3,7 +3,7 @@
   margin-top: 2em;
   padding-bottom: 1em;
   background: {
-    image: url(../pics/latest-work-bg.jpg);
+    image: url(pics/latest-work-bg.jpg);
     size: cover;
     position: center;
   }
@@ -20,21 +20,28 @@
   margin: 0 auto;
 }
 
-.single-image {
-  max-width: 500px;
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+
+  @include landscape {
+    max-height: 100vh;
+  }
   
-  @include widthGreaterEqual (950px) {
-    &:not(&--enlarged) {
-      width: 25%;
+  &__wrapper {
+    max-width: 500px;
+  
+    @include widthGreaterEqual (950px) {
+      &:not(&--enlarged) {
+        width: 25%;
+      }
     }
+    
+    @include media (photo);
   }
   
-  &__image {
-    width: 100%;
-    height: auto;
-  }
-  
-  &__hover {
+  &__hover-screen {
     position: absolute;
     top: 0;
     width: 100%;
@@ -60,6 +67,4 @@
       }
     }
   }
-  
-  @include media (photo);
 }

@@ -1,13 +1,15 @@
-require('./scss/entry.scss');
-require('./eventHandlers/stickyMenu');
-require('./eventHandlers/animations');
-require('./eventHandlers/smoothScroll');
-require('./eventHandlers/resizeHandler');
-require('./navigation/hamburgerMenu');
-require('./media/openCloseVideo');
-require('./media/openClosePhoto');
-require('./slider/slider');
-require('./canvas/canvasFunctions');
+require('./entry.scss');
+require('./js/modernizr-custom');
+require('./js/eventHandlers/stickyMenu');
+require('./js/eventHandlers/animations');
+require('./js/eventHandlers/smoothScroll');
+require('./js/eventHandlers/resizeHandler');
+require('./js/navigation/hamburgerMenu');
+require('./js/media/openCloseVideo');
+require('./js/media/openClosePhoto');
+require('./js/slider/slider');
+require('./js/canvas/canvasFunctions');
 
-require('./pics/sprite-blogs.jpg');
-require('./pics/sprite-engineers.png');
+//prevent default on forms
+var forms = require('./js/helpers/getDOMElements').forms;
+forms.click((e) => e.preventDefault());
