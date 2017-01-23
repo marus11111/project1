@@ -12,4 +12,6 @@ require('./js/canvas/canvasFunctions');
 
 //prevent default on forms
 var forms = require('./js/helpers/getDOMElements').forms;
-forms.click((e) => e.preventDefault());
+forms.click(function(e) {
+  e.preventDefault();
+});

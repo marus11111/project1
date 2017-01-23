@@ -59,7 +59,7 @@
 }
 
 .scroll-anim {
-  &.video-wrapper {
+  &.video__wrapper {
     @include enter (slide-from-depth);
   }
   &.featured-snippet {
