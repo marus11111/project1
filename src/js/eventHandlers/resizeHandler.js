@@ -17,39 +17,50 @@ var menuBreakpoint = require('../navigation/hamburgerMenu').menuBreakpoint;
 //will store timeout for debouncing
 var timeout;
 
+//will store info about window width to compare it to new window width;
+//it is here so that resize handler may fire only when window width changes,
+//which will prevent continous canvas redrawing when browser bar is being hidden 
+// and shown on mobile devices 
+var currentWindowWidth = window.innerWidth;
+
 //will store new canvas options
 var resizeCanvasOptions;
 
 function resizeHandler() {
-  var windowWidth = window.innerWidth;
+  var newWindowWidth = window.innerWidth;
+  
+  if(newWindowWidth !== currentWindowWidth) {
+    
+    //hide/show hamburger menu
+    hide(darkBg);
+    (newWindowWidth >= menuBreakpoint) ? show(menu): hide(menu);
 
-  //hide/show hamburger menu
-  hide(darkBg);
-  (windowWidth >= menuBreakpoint) ? show(menu): hide(menu);
+    //minimize videos and photos
+    for (i = 0; i < 2; i++) {
+      minimizeVideo(i, newWindowWidth);
+    }
+    for (i = 0; i < 8; i++) {
+      minimizePhoto(i, newWindowWidth);
+    }
 
-  //minimize videos and photos
-  for (i = 0; i < 2; i++) {
-    minimizeVideo(i, windowWidth);
-  }
-  for (i = 0; i < 8; i++) {
-    minimizePhoto(i, windowWidth);
-  }
-
-  //Check if canvas has been scrolled to and 
-  //drawn - if that's the case, only options and initial 0% circles  
-  //will be updated, else full redraw will be performed.
-  clearTimeout(timeout); //debounce
-  var canvasDrawn = isCanvasDrawn();
-  if (!canvasDrawn) {
-    timeout = setTimeout(function () {
-      resizeCanvasOptions = new CanvasOptions(windowWidth);
-      drawInitialCircles(resizeCanvasOptions);
-      passNewOptions(resizeCanvasOptions);
-    }, 500);
-  } else {
-    timeout = setTimeout(function () {
-      drawCircles(new CanvasOptions(windowWidth));
-    }, 500);
+    //Check if canvas has been scrolled to and 
+    //drawn - if that's the case, only options and initial 0% circles  
+    //will be updated, else full redraw will be performed.
+    clearTimeout(timeout); //debounce
+    var canvasDrawn = isCanvasDrawn();
+    if (!canvasDrawn) {
+      timeout = setTimeout(function () {
+        resizeCanvasOptions = new CanvasOptions(newWindowWidth);
+        drawInitialCircles(resizeCanvasOptions);
+        passNewOptions(resizeCanvasOptions);
+      }, 500);
+    } else {
+      timeout = setTimeout(function () {
+        drawCircles(new CanvasOptions(newWindowWidth));
+      }, 500);
+    }
+    
+    currentWindowWidth = newWindowWidth;
   }
 }
 
