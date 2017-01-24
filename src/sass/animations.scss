@@ -48,7 +48,7 @@
     transform: perspective(200px) rotate3d(90, 90, 0, 40deg);
   }
   100% {
-    transform: perspective(200px) rotate3d(0, 0, 0, 0);
+    transform: perspective(200px) rotate3d(0, 0, 0, 0deg);
   }
 }
 
